@@ -1,0 +1,101 @@
+---
+const products = [
+  { name: "Camera", href: "/products/camera", ready: true },
+  { name: "Vision Processing Unit", href: "#", ready: false },
+  { name: "Lights", href: "#", ready: false },
+  { name: "FOG Gyro", href: "#", ready: false },
+  { name: "Quartz Pressure Sensor", href: "#", ready: false },
+  { name: "Subsea Converter", href: "#", ready: false },
+  { name: "Subsea Display", href: "#", ready: false },
+];
+
+const nav = [
+  { label: "Technical", href: "https://docs.zimo.no/", external: true },
+  { label: "About Us", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+<header class="sticky top-0 z-50 border-b border-white/10 bg-black/55 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+    <a href="/" class="flex items-center gap-3">
+      <img
+        src="/brand/ZiMO_full_white.svg"
+        alt="ZiMO"
+        class="h-8 w-auto"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-8 text-sm font-medium text-white/80 md:flex">
+      <!-- Products dropdown -->
+    <div class="group relative">
+    <button
+        class="inline-flex items-center gap-2 rounded-lg px-2 py-2 text-white/80 transition hover:text-white focus:outline-none"
+        type="button"
+    >
+        Products
+        <span class="text-white/60 transition group-hover:text-white">▾</span>
+    </button>
+
+    <!-- Hover bridge: fanger musepekeren når du går fra knapp til meny -->
+    <div class="invisible absolute left-0 top-full h-3 w-72 group-hover:visible group-focus-within:visible"></div>
+
+    <div
+        class="invisible absolute left-0 top-full z-50 mt-0 w-72 translate-y-1 rounded-2xl border border-white/10 bg-[#070a0f]/95 p-2 opacity-0 shadow-2xl shadow-black/50 backdrop-blur transition
+            group-hover:visible group-hover:translate-y-0 group-hover:opacity-100
+            group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
+    >
+        <div class="px-3 pb-2 pt-2 text-xs font-semibold tracking-wide text-white/50">
+        ZiMO Modules
+        </div>
+
+        <div class="h-px bg-white/10"></div>
+
+        <ul class="py-2">
+        {products.map((p) => (
+            <li>
+            {p.ready ? (
+                <a
+                href={p.href}
+                class="flex items-center justify-between rounded-xl px-3 py-2 text-sm text-white/85 hover:bg-white/5 hover:text-white"
+                >
+                <span>{p.name}</span>
+                <span class="text-xs text-white/40">→</span>
+                </a>
+            ) : (
+                <div
+                class="flex cursor-not-allowed items-center justify-between rounded-xl px-3 py-2 text-sm text-white/35"
+                title="Coming soon"
+                >
+                <span>{p.name}</span>
+                <span class="text-xs text-white/25">Coming soon</span>
+                </div>
+            )}
+            </li>
+        ))}
+        </ul>
+    </div>
+    </div>
+
+
+      {nav.map((i) => (
+        <a
+          class="hover:text-white transition"
+          href={i.href}
+          target={i.external ? "_blank" : undefined}
+          rel={i.external ? "noreferrer" : undefined}
+        >
+          {i.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="/products/camera"
+      class="hidden rounded-full bg-red-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-red-600/20 hover:bg-red-500 md:inline-flex"
+    >
+      Our products
+    </a>
+  </div>
+</header>

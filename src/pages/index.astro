@@ -1,11 +1,174 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="ZiMO — Subsea Systems">
+  <Header />
+
+  <main class="bg-[#070a0f]">
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <!-- Subtle vignette (ingen gradient band) -->
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_35%,rgba(255,255,255,0.06),transparent_60%)]"></div>
+
+      <div class="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-28 md:grid-cols-2 md:py-36">
+        <!-- TEXT -->
+        <div>
+          <h1 class="text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+            High-Reliability<br />
+            Electronic Systems<br />
+            Development
+          </h1>
+
+          <p class="mt-6 text-sm text-white/70">
+            Innovative Engineering Solutions
+          </p>
+
+          <div class="mt-10 flex items-center gap-6">
+            <a
+              href="/products"
+              class="rounded-full bg-red-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-500"
+            >
+              OUR PRODUCTS!
+            </a>
+
+            <a
+              href="https://docs.zimo.no/"
+              target="_blank"
+              rel="noreferrer"
+              class="text-sm font-semibold text-white/80 transition hover:text-white"
+            >
+              Technical docs →
+            </a>
+          </div>
+        </div>
+
+        <!-- NEON RING -->
+        <div class="relative mx-auto flex h-[280px] w-[280px] items-center justify-center md:h-[340px] md:w-[340px]">
+          <div class="absolute inset-0 rounded-full blur-3xl opacity-60 [background:radial-gradient(circle_at_center,rgba(255,0,140,0.35),rgba(120,90,255,0.25),transparent_60%)]"></div>
+          <div class="absolute inset-12 rounded-full blur-xl opacity-80 [background:conic-gradient(from_180deg,rgba(255,80,160,0.95),rgba(120,90,255,0.95),rgba(0,200,255,0.7),rgba(255,80,160,0.95))]"></div>
+          <div class="absolute inset-[78px] rounded-full bg-[#070a0f]"></div>
+          <div class="absolute inset-0 rounded-full ring-1 ring-white/10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM SHOWCASE -->
+    <section class="relative">
+      <div class="mx-auto max-w-6xl px-6 pb-20 pt-12">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight md:text-5xl">
+            High-Performance Subsea Systems
+          </h2>
+          <p class="mt-4 text-sm leading-relaxed text-white/75 md:text-base">
+            Compact, cost-efficient hardware platforms engineered for low latency,
+            extreme depths, and demanding machine vision and navigation applications.
+          </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <!-- CARD 1 -->
+          <article class="group rounded-2xl border border-white/10 bg-black/35 backdrop-blur transition hover:bg-black/55">
+            <div class="p-5">
+              <div class="overflow-hidden rounded-xl border border-white/10 bg-black/40">
+                <img
+                  src="/products/camera.webp"
+                  alt="Subsea Machine Vision Camera"
+                  loading="lazy"
+                  class="h-56 w-full object-contain p-6 transition duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <h3 class="mt-6 text-2xl font-semibold">
+                Subsea Machine Vision Camera
+              </h3>
+
+              <p class="mt-3 text-sm leading-relaxed text-white/75">
+                Compact, cost-effective cameras designed for machine vision,
+                featuring ultra-low latency, wide field of view, and reliable
+                operation at extreme depths.
+              </p>
+
+              <a
+                href="/products/camera"
+                class="mt-6 inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-500"
+              >
+                PRODUCT PAGE
+                <span aria-hidden="true">›</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="group rounded-2xl border border-white/10 bg-black/35 backdrop-blur transition hover:bg-black/55">
+            <div class="p-5">
+              <div class="overflow-hidden rounded-xl border border-white/10 bg-black/40">
+                <img
+                  src="/products/vpu.webp"
+                  alt="Camera Processing System"
+                  loading="lazy"
+                  class="h-56 w-full object-contain p-6 transition duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <h3 class="mt-6 text-2xl font-semibold">
+                Camera Processing System
+              </h3>
+
+              <p class="mt-3 text-sm leading-relaxed text-white/75">
+                A high-performance camera processing platform enabling edge AI
+                with ultra-low latency, fast boot-up, and flexible 4 or 8 camera
+                configurations.
+              </p>
+
+              <a
+                href="/products/processing"
+                class="mt-6 inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-500"
+              >
+                READ MORE
+                <span aria-hidden="true">›</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="group rounded-2xl border border-white/10 bg-black/35 backdrop-blur transition hover:bg-black/55">
+            <div class="p-5">
+              <div class="overflow-hidden rounded-xl border border-white/10 bg-black/40">
+                <img
+                  src="/products/fog.webp"
+                  alt="FOG Gyro Unit"
+                  loading="lazy"
+                  class="h-56 w-full object-contain p-6 transition duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <h3 class="mt-6 text-2xl font-semibold">
+                FOG Gyro Unit
+              </h3>
+
+              <p class="mt-3 text-sm leading-relaxed text-white/75">
+                A cost-effective fiber optic gyro unit integrated in a robust
+                pressure-rated housing, designed for reliable operation at
+                extreme depths.
+              </p>
+
+              <a
+                href="/products/fog-gyro"
+                class="mt-6 inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-500"
+              >
+                READ MORE
+                <span aria-hidden="true">›</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="mt-14 text-center text-sm font-medium text-white/80">
+          Designed in Norway · European Supply Chain · Assembled in Norway
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

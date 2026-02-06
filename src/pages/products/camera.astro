@@ -1,0 +1,29 @@
+---
+import ProductLayout from "../../layouts/ProductLayout.astro";
+---
+
+<ProductLayout
+  title="Subsea Machine Vision Camera"
+  subtitle="Camera module"
+  description="Compact, cost-effective subsea camera designed for machine vision — ultra-low latency, wide field of view, and reliable operation at extreme depths."
+  heroImage="/products/camera.webp"
+  tags={["Ultra-low latency", "Machine vision", "Low-light", "Depth rated"]}
+  specs={[
+    { label: "Output", value: "Ethernet / GigE" },
+    { label: "Latency", value: "Ultra-low" },
+    { label: "Use", value: "Inspection & autonomy" },
+    { label: "Platform", value: "Modular ZiMO stack" },
+  ]}
+>
+  <p>
+    ZiMO’s camera module is engineered for subsea environments where reliability and clarity matter.
+    It integrates cleanly with ZiMO processing and lighting modules, and is designed for real-time operation
+    in demanding machine vision and navigation pipelines.
+  </p>
+
+  <ul class="mt-4 list-disc pl-5 text-white/75">
+    <li>Designed for harsh underwater lighting conditions</li>
+    <li>Built for low-latency live feed and CV pipelines</li>
+    <li>Optimized for compact integration in ROV systems</li>
+  </ul>
+</ProductLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<BaseLayout title="ZiMO — Contact" description="Contact ZiMO about subsea camera systems and modules.">
+  <Header />
+
+  <main class="container">
+    <h1 style="margin:0 0 10px 0; font-size:34px;">Contact</h1>
+    <p class="muted" style="margin:0 0 18px 0; max-width:75ch; line-height:1.6;">
+      This is a local-only prototype site. Add your preferred contact method here (email, form, etc.).
+    </p>
+
+    <div class="card">
+      <div style="font-weight:800; margin-bottom:6px;">Suggested next step</div>
+      <div class="muted" style="line-height:1.6;">
+        Add a simple contact form (static) or a mailto link, then later wire it to your backend when you go public.
+      </div>
+      <div style="margin-top:12px;">
+        <a class="btn" href="mailto:hello@zimo.no">Email: hello@zimo.no →</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
