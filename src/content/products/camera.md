@@ -17,8 +17,7 @@ media:
     src: /products/camera/detail.webp
     alt: Detail view of the camera module housing.
   video:
-    src: /products/camera/demo.mp4
-    poster: /products/camera/demo-poster.webp
+    youtubeId: ScMzIvxBSi4
     caption: Sample footage (compressed for web).
   model:
     src: /products/camera/model.glb
