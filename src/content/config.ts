@@ -19,8 +19,7 @@ const products = defineCollection({
         alt: z.string(),
       }),
       video: z.object({
-        src: z.string(),
-        poster: z.string().optional(),
+        youtubeId: z.string(),
         caption: z.string().optional(),
       }),
       model: z.object({
