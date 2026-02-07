@@ -1,0 +1,257 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const foundedYear = 2026;
+const location = "Rogaland, Norway";
+const docsUrl = "https://docs.zimo.no";
+const contactUrl = "/contact";
+---
+
+<BaseLayout title="ZiMO — About" description="Learn about ZiMO's subsea electronics, built in Norway with a European supply chain.">
+  <Header />
+
+  <main class="bg-[#070a0f] text-white">
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_420px_at_50%_20%,rgba(255,255,255,0.08),transparent_60%)]"></div>
+      <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pb-16 pt-20 md:pb-20 md:pt-28">
+        <div class="flex flex-col gap-5">
+          <p class="text-sm uppercase tracking-[0.2em] text-white/60">About</p>
+          <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">About ZiMO</h1>
+          <p class="max-w-2xl text-base text-white/75 sm:text-lg">
+            ZiMO was built by former subsea engineers who saw clear improvement potential in the market. We design and deliver
+            robust subsea electronics that prioritize field performance, fast delivery, and practical engineering choices.
+          </p>
+        </div>
+
+        <div class="grid gap-6 border-y border-white/10 py-6 md:grid-cols-5 md:divide-x md:divide-white/10">
+          <div class="flex flex-col gap-1 md:pr-6">
+            <span class="text-xs uppercase tracking-[0.2em] text-white/60">Founded</span>
+            <span class="text-lg font-semibold text-white">{foundedYear}</span>
+          </div>
+          <div class="flex flex-col gap-1 md:px-6">
+            <span class="text-xs uppercase tracking-[0.2em] text-white/60">Designed in</span>
+            <span class="text-lg font-semibold text-white">Norway</span>
+          </div>
+          <div class="flex flex-col gap-1 md:px-6">
+            <span class="text-xs uppercase tracking-[0.2em] text-white/60">Assembled in</span>
+            <span class="text-lg font-semibold text-white">{location}</span>
+          </div>
+          <div class="flex flex-col gap-1 md:px-6">
+            <span class="text-xs uppercase tracking-[0.2em] text-white/60">Components</span>
+            <span class="text-lg font-semibold text-white">Sourced from Europe</span>
+          </div>
+          <div class="flex flex-col gap-1 md:pl-6">
+            <span class="text-xs uppercase tracking-[0.2em] text-white/60">Shipping</span>
+            <span class="text-lg font-semibold text-white">Worldwide from Norway</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-16" aria-labelledby="what-we-build">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="flex flex-col gap-4">
+          <h2 id="what-we-build" class="text-3xl font-semibold tracking-tight sm:text-4xl">What we build</h2>
+          <p class="text-base text-white/75 sm:text-lg">
+            We focus on subsea electronics with extremely short lead times and robust, no-nonsense engineering.
+            Our standardized platform spans core subsea sensing, lighting, and processing needs.
+          </p>
+          <ul class="mt-2 grid gap-3 text-sm text-white/75 sm:text-base">
+            <li class="flex items-start gap-3 border-t border-white/10 pt-3">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-red-500"></span>
+              Subsea camera systems and SerDes camera architectures
+            </li>
+            <li class="flex items-start gap-3 border-t border-white/10 pt-3">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-red-500"></span>
+              High-performance subsea lights
+            </li>
+            <li class="flex items-start gap-3 border-t border-white/10 pt-3">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-red-500"></span>
+              Gyro / IMU units
+            </li>
+            <li class="flex items-start gap-3 border-t border-white/10 pt-3">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-red-500"></span>
+              Pressure sensors for extreme depth
+            </li>
+            <li class="flex items-start gap-3 border-t border-white/10 pt-3">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-red-500"></span>
+              Video processing and system components
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-6 border-l border-white/10 pl-8">
+          <div class="flex flex-col gap-3">
+            <p class="text-sm uppercase tracking-[0.2em] text-white/60">Documentation</p>
+            <p class="text-base text-white/75">
+              All technical information is maintained at our documentation portal.
+            </p>
+            <a
+              href={docsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Explore documentation
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="flex flex-col gap-4 border-t border-white/10 pt-4 text-sm text-white/70">
+            <p>
+              We serve the entire subsea market, from specialized operators to large integrators. Products ship from Norway to
+              customers worldwide.
+            </p>
+            <a
+              href={contactUrl}
+              class="inline-flex w-fit items-center gap-2 text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Contact our team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-16" aria-labelledby="why-zimo">
+      <div class="flex flex-col gap-4">
+        <p class="text-sm uppercase tracking-[0.2em] text-white/60">Why ZiMO</p>
+        <h2 id="why-zimo" class="text-3xl font-semibold tracking-tight sm:text-4xl">Differentiators that matter offshore</h2>
+      </div>
+      <div class="grid gap-6 border-y border-white/10 py-8 md:grid-cols-2">
+        <div class="flex flex-col gap-3">
+          <h3 class="text-xl font-semibold">Lead times are short by design</h3>
+          <p class="text-sm text-white/75 sm:text-base">
+            Standardized product platforms and a deliberate inventory strategy keep delivery fast. Even for larger orders, our
+            European supply chain maintains short lead times.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h3 class="text-xl font-semibold">Robustness first</h3>
+          <p class="text-sm text-white/75 sm:text-base">
+            We focus on harsh-environment performance. "No over-engineered solutions that fail" — include the important
+            features and make it extremely robust.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h3 class="text-xl font-semibold">Best-in-class specifications</h3>
+          <p class="text-sm text-white/75 sm:text-base">
+            We state performance targets clearly and deliver against them. High-reliability electronics with clear, measurable
+            output.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h3 class="text-xl font-semibold">Practical engineering</h3>
+          <p class="text-sm text-white/75 sm:text-base">
+            Decisions are made by engineers who build and deploy subsea systems. The result is equipment that installs fast and
+            operates predictably.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-16" aria-labelledby="manufacturing">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="flex flex-col gap-4">
+          <h2 id="manufacturing" class="text-3xl font-semibold tracking-tight sm:text-4xl">Manufacturing & supply chain</h2>
+          <p class="text-base text-white/75 sm:text-lg">
+            Designed in Norway. Assembled in Norway, with production centered in {location}. Components are sourced from Europe to
+            protect quality and keep logistics reliable.
+          </p>
+          <p class="text-base text-white/75 sm:text-lg">
+            This structure gives us resilient supply and predictable delivery, while supporting global shipping from Norway.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 border-l border-white/10 pl-8">
+          <div class="flex flex-col gap-2">
+            <p class="text-sm uppercase tracking-[0.2em] text-white/60">Global fulfillment</p>
+            <p class="text-base text-white/75">
+              We ship worldwide from Norway, serving the entire subsea market and supporting both large and small customers.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 border-t border-white/10 pt-4">
+            <p class="text-sm uppercase tracking-[0.2em] text-white/60">Fast delivery</p>
+            <p class="text-base text-white/75">
+              Inventory is aligned to standardized platforms, enabling rapid delivery without compromising on reliability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-16" aria-labelledby="support">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="flex flex-col gap-4">
+          <h2 id="support" class="text-3xl font-semibold tracking-tight sm:text-4xl">Support & collaboration</h2>
+          <p class="text-base text-white/75 sm:text-lg">
+            We provide customization and engineering support for system integrators, OEMs, and offshore operations. Technical
+            support is available by phone and email.
+          </p>
+          <div class="mt-2 flex flex-wrap gap-4">
+            <a
+              href={contactUrl}
+              class="inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Contact sales
+            </a>
+            <a
+              href={contactUrl}
+              class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Contact technical support
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 border-l border-white/10 pl-8">
+          <div class="flex flex-col gap-2">
+            <p class="text-sm uppercase tracking-[0.2em] text-white/60">Direct collaboration</p>
+            <p class="text-base text-white/75">
+              We align product roadmaps with operators and integrators when there is a clear engineering case and delivery plan.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 border-t border-white/10 pt-4">
+            <p class="text-sm uppercase tracking-[0.2em] text-white/60">Technical support</p>
+            <p class="text-base text-white/75">
+              Phone and email support from engineers who know the products inside out.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-16" aria-labelledby="milestones">
+      <div class="flex flex-col gap-3">
+        <p class="text-sm uppercase tracking-[0.2em] text-white/60">Milestones</p>
+        <h2 id="milestones" class="text-3xl font-semibold tracking-tight sm:text-4xl">Key milestones</h2>
+      </div>
+      <div class="grid gap-6 border-y border-white/10 py-8 md:grid-cols-3">
+        <div class="flex flex-col gap-2">
+          <span class="text-xs uppercase tracking-[0.2em] text-white/60">{foundedYear}</span>
+          <p class="text-lg font-semibold text-white">Founded in Norway</p>
+          <p class="text-sm text-white/75">Established to build robust, dependable subsea electronics.</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-xs uppercase tracking-[0.2em] text-white/60">First product</span>
+          <p class="text-lg font-semibold text-white">SerDes camera</p>
+          <p class="text-sm text-white/75">The first milestone and platform anchor for subsea imaging.</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-xs uppercase tracking-[0.2em] text-white/60">Platform</span>
+          <p class="text-lg font-semibold text-white">Standardized inventory strategy</p>
+          <p class="text-sm text-white/75">Aligned manufacturing and inventory to accelerate delivery.</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 text-sm text-white/70">
+        <span>Ready to discuss your subsea system?</span>
+        <a
+          href={contactUrl}
+          class="font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Contact ZiMO
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
