@@ -2,7 +2,7 @@
 const { title, media } = Astro.props;
 ---
 
-<div class="space-y-4">
+<div class="space-y-4" data-showcase-root>
   <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
     Showcase
   </div>
@@ -84,38 +84,37 @@ const { title, media } = Astro.props;
       </div>
     </div>
   </div>
-</div>
+  <script is:inline type="module">
+  const roots = document.querySelectorAll("[data-showcase-root]");
+  roots.forEach((root) => {
+    const tabs = root.querySelectorAll(".showcase-tab");
+    const panels = root.querySelectorAll(".showcase-panel");
+    const caption = root.querySelector(".showcase-video-caption");
 
-<script is:inline type="module">
-  const root = document.currentScript?.previousElementSibling;
-  if (!root) return;
+    const activate = (target) => {
+      tabs.forEach((tab) => {
+        const isActive = tab.dataset.tab === target;
+        tab.setAttribute("aria-pressed", String(isActive));
+        tab.classList.toggle("bg-white/10", isActive);
+        tab.classList.toggle("border-white/30", isActive);
+        tab.classList.toggle("text-white", isActive);
+      });
+      panels.forEach((panel) => {
+        panel.classList.toggle("hidden", panel.dataset.panel !== target);
+      });
+      if (caption) {
+        caption.classList.toggle("hidden", target !== "video");
+      }
+    };
 
-  const tabs = root.querySelectorAll(".showcase-tab");
-  const panels = root.querySelectorAll(".showcase-panel");
-  const caption = root.querySelector(".showcase-video-caption");
-
-  const activate = (target) => {
     tabs.forEach((tab) => {
-      const isActive = tab.dataset.tab === target;
-      tab.setAttribute("aria-pressed", String(isActive));
-      tab.classList.toggle("bg-white/10", isActive);
-      tab.classList.toggle("border-white/30", isActive);
-      tab.classList.toggle("text-white", isActive);
+      tab.addEventListener("click", () => activate(tab.dataset.tab));
     });
-    panels.forEach((panel) => {
-      panel.classList.toggle("hidden", panel.dataset.panel !== target);
-    });
-    if (caption) {
-      caption.classList.toggle("hidden", target !== "video");
-    }
-  };
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => activate(tab.dataset.tab));
+    activate("photo");
   });
-
-  activate("photo");
 </script>
+</div>
 
 <script
   type="module"
