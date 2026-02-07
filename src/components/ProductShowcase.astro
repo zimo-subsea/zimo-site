@@ -1,0 +1,122 @@
+---
+const { title, media } = Astro.props;
+---
+
+<div class="space-y-4" data-showcase-root>
+  <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+    Showcase
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 via-black/40 to-black/70 p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_30px_60px_rgba(0,0,0,0.35)]">
+    <div class="flex flex-wrap gap-2 border-b border-white/10 pb-3">
+      {["Photo", "Detail", "Video", "3D"].map((label, index) => (
+        <button
+          class="showcase-tab rounded-full border border-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/70 transition hover:border-white/30 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60"
+          data-tab={label.toLowerCase()}
+          aria-pressed={index === 0 ? "true" : "false"}
+          type="button"
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-4">
+      <div class="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-inner">
+        <div class="showcase-panel absolute inset-0" data-panel="photo">
+          <img
+            src={media.hero.src}
+            alt={media.hero.alt || title}
+            class="h-full w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <div class="showcase-panel absolute inset-0 hidden" data-panel="detail">
+          <img
+            src={media.detail.src}
+            alt={media.detail.alt || `${title} detail`}
+            class="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="showcase-panel absolute inset-0 hidden" data-panel="video">
+          <video
+            class="h-full w-full object-cover"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+            poster={media.video.poster}
+          >
+            <source src={media.video.src} type="video/mp4" />
+          </video>
+        </div>
+        <div class="showcase-panel absolute inset-0 hidden" data-panel="3d">
+          <model-viewer
+            class="h-full w-full bg-black/30"
+            src={media.model.src}
+            poster={media.model.poster}
+            alt={media.model.alt || `${title} 3D model`}
+            camera-controls
+            auto-rotate
+            interaction-prompt="auto"
+            shadow-intensity="0.5"
+            exposure="1"
+            environment-image="neutral"
+          />
+        </div>
+      </div>
+
+      <div class="showcase-video-caption mt-3 hidden space-y-1 text-xs text-white/55">
+        <p>{media.video.caption || "Sample footage (compressed for web)."}</p>
+        <p>
+          For full-resolution samples,{" "}
+          <a
+            href="/contact"
+            class="text-white/80 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+          >
+            contact us
+          </a>
+          .
+        </p>
+      </div>
+    </div>
+  </div>
+  <script is:inline type="module">
+  const root = document.currentScript?.closest("[data-showcase-root]");
+  if (!root) return;
+
+  const tabs = root.querySelectorAll(".showcase-tab");
+  const panels = root.querySelectorAll(".showcase-panel");
+  const caption = root.querySelector(".showcase-video-caption");
+
+  const activate = (target) => {
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.tab === target;
+      tab.setAttribute("aria-pressed", String(isActive));
+      tab.classList.toggle("bg-white/10", isActive);
+      tab.classList.toggle("border-white/30", isActive);
+      tab.classList.toggle("text-white", isActive);
+    });
+    panels.forEach((panel) => {
+      panel.classList.toggle("hidden", panel.dataset.panel !== target);
+    });
+    if (caption) {
+      caption.classList.toggle("hidden", target !== "video");
+    }
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => activate(tab.dataset.tab));
+  });
+
+  activate("photo");
+</script>
+</div>
+
+<script
+  type="module"
+  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+></script>

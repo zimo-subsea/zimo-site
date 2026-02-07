@@ -1,0 +1,98 @@
+---
+const { data } = Astro.props;
+
+const size = 260;
+const center = size / 2;
+const radius = 90;
+const labelRadius = 112;
+const levels = 4;
+
+const angleStep = (Math.PI * 2) / data.length;
+
+const polarToCartesian = (value, index, rScale = radius) => {
+  const angle = angleStep * index - Math.PI / 2;
+  return {
+    x: center + Math.cos(angle) * rScale * value,
+    y: center + Math.sin(angle) * rScale * value,
+  };
+};
+
+const valuePoints = data
+  .map((item, index) => {
+    const point = polarToCartesian(item.value / 10, index);
+    return `${point.x},${point.y}`;
+  })
+  .join(" ");
+
+const axisPoints = data.map((_, index) => polarToCartesian(1, index));
+---
+
+<div class="space-y-3">
+  <div>
+    <h3 class="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">
+      Performance snapshot
+    </h3>
+    <p class="mt-2 text-xs leading-relaxed text-white/55">
+      Relative scores (0–10) for quick comparison. Full specs in technical docs.
+    </p>
+  </div>
+
+  <svg
+    viewBox={`0 0 ${size} ${size}`}
+    class="mx-auto block h-64 w-64"
+    role="img"
+    aria-label="Radar chart of performance metrics"
+  >
+    <g class="text-white/15">
+      {Array.from({ length: levels }).map((_, levelIndex) => {
+        const level = (levelIndex + 1) / levels;
+        const points = data
+          .map((_, index) => {
+            const point = polarToCartesian(level, index);
+            return `${point.x},${point.y}`;
+          })
+          .join(" ");
+        return <polygon points={points} fill="none" stroke="currentColor" />;
+      })}
+    </g>
+
+    <g class="text-white/10">
+      {axisPoints.map((point) => (
+        <line
+          x1={center}
+          y1={center}
+          x2={point.x}
+          y2={point.y}
+          stroke="currentColor"
+        />
+      ))}
+    </g>
+
+    <polygon
+      points={valuePoints}
+      fill="rgba(239,68,68,0.18)"
+      stroke="rgba(239,68,68,0.9)"
+      stroke-width="1.2"
+    />
+
+    <g class="text-white/75">
+      {data.map((item, index) => {
+        const point = polarToCartesian(1, index, labelRadius);
+        const anchor = point.x < center - 4 ? "end" : point.x > center + 4 ? "start" : "middle";
+        return (
+          <text
+            x={point.x}
+            y={point.y}
+            text-anchor={anchor}
+            font-size="9"
+            class="fill-current"
+          >
+            {item.label}
+          </text>
+        );
+      })}
+    </g>
+  </svg>
+
+  <p class="text-[11px] text-white/50">Scale: 0 = baseline, 10 = best-in-class</p>
+</div>
