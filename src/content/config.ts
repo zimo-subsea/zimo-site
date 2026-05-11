@@ -4,48 +4,26 @@ const products = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    category: z.string(),
+    eyebrow: z.string(),
     summary: z.string(),
-    tags: z.array(z.string()).min(4).max(6),
-    docsUrl: z.string().url(),
-    requestUrl: z.string(),
-    media: z.object({
-      hero: z.object({
-        src: z.string(),
-        alt: z.string(),
-      }),
-      detail: z.object({
-        src: z.string(),
-        alt: z.string(),
-      }),
-      video: z.object({
-        youtubeId: z.string(),
-        caption: z.string().optional(),
-      }),
-      model: z.object({
-        src: z.string(),
-        poster: z.string().optional(),
-        alt: z.string().optional(),
-      }),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
     }),
-    highlights: z
-      .array(
-        z.object({
-          label: z.string(),
-          value: z.string(),
-        }),
-      )
-      .min(4)
-      .max(6),
-    radar: z
-      .array(
-        z.object({
-          label: z.string(),
-          value: z.number().min(0).max(10),
-        }),
-      )
-      .min(4)
-      .max(8),
+    tags: z.array(z.string()).min(3).max(6),
+    requestUrl: z.string(),
+    specs: z.array(
+      z.object({
+        label: z.string(),
+        value: z.string(),
+      }),
+    ),
+    principles: z.array(
+      z.object({
+        title: z.string(),
+        text: z.string(),
+      }),
+    ),
   }),
 });
 

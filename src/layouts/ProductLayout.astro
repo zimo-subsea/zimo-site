@@ -1,121 +1,109 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Header from "../components/Header.astro";
-import ProductShowcase from "../components/ProductShowcase.astro";
-import RadarChart from "../components/RadarChart.astro";
+import Footer from "../components/Footer.astro";
 
 const {
-  title = "Product",
-  category = "Module",
-  summary = "",
+  title,
+  eyebrow,
+  summary,
   tags = [],
-  docsUrl = "https://docs.zimo.no/",
   requestUrl = "/contact",
-  media,
-  highlights = [],
-  radar = [],
+  image,
+  specs = [],
+  principles = [],
 } = Astro.props;
 ---
 
-<BaseLayout title={`ZiMO — ${title}`}>
+<BaseLayout title={`Zimo — ${title}`} description={summary}>
   <Header />
 
-  <main class="bg-[#070a0f]">
+  <main class="bg-[#05090b] text-white">
     <section class="relative overflow-hidden">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_20%,rgba(255,255,255,0.06),transparent_60%)]"></div>
-
-      <div class="relative mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-y-10">
-          <div class="order-1 space-y-7 lg:col-start-1">
-            <div class="space-y-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-white/55">{category}</p>
-              <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">{title}</h1>
-              <p class="max-w-xl text-sm leading-relaxed text-white/70 md:text-base">{summary}</p>
-            </div>
-
-            {tags?.length > 0 && (
-              <div class="flex flex-wrap gap-2">
-                {tags.map((t) => (
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/70 transition hover:border-white/25 hover:text-white">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            <p class="text-sm text-white/65">
-              Fit check: Ideal for {category.toLowerCase()} deployments.{" "}
-              <a
-                href={requestUrl}
-                class="text-white/85 underline decoration-white/30 underline-offset-4 transition hover:text-white"
-              >
-                Request info
-              </a>
-              .
-            </p>
-
-            <div class="flex flex-wrap gap-3">
-              <a
-                href={requestUrl}
-                class="rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60"
-              >
-                Get a quote →
-              </a>
-              <a
-                href={docsUrl}
-                target="_blank"
-                rel="noreferrer"
-                class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white/85 transition hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60"
-              >
-                Technical docs
-              </a>
-            </div>
+      <div class="absolute inset-0 bg-[radial-gradient(900px_420px_at_72%_28%,rgba(168,255,242,0.16),transparent_68%)]"></div>
+      <div class="zimo-shell relative grid gap-12 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:py-28">
+        <div>
+          <p class="zimo-eyebrow">{eyebrow}</p>
+          <h1 class="mt-6 text-5xl font-semibold leading-tight tracking-tight md:text-7xl">
+            {title}
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-white/70">
+            {summary}
+          </p>
+          <div class="mt-8 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span class="rounded-md border border-white/12 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/68">
+                {tag}
+              </span>
+            ))}
           </div>
-
-          <div class="order-2 lg:col-start-2">
-            <ProductShowcase title={title} media={media} />
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={requestUrl}
+              class="inline-flex items-center justify-center rounded-md bg-[#a8fff2] px-6 py-3 text-sm font-semibold text-[#05090b] transition hover:bg-[#c6fff7]"
+            >
+              Snakk om pilot
+            </a>
+            <a
+              href="https://docs.zimo.no/"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center rounded-md border border-white/18 bg-white/5 px-6 py-3 text-sm font-semibold text-white/86 transition hover:border-white/36 hover:bg-white/9"
+            >
+              Teknisk dokumentasjon
+            </a>
           </div>
+        </div>
 
-          {highlights?.length > 0 && (
-            <div class="order-3 lg:col-start-1">
-              <div class="border-t border-white/10 pt-8">
-                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-white/55">
-                  Key highlights
-                </h2>
-                <dl class="mt-4 divide-y divide-white/10 text-sm">
-                  {highlights.map((item) => (
-                    <div class="grid grid-cols-[1fr_auto] gap-6 py-3">
-                      <dt class="text-white/55">{item.label}</dt>
-                      <dd class="text-right font-semibold text-white/85">{item.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </div>
-          )}
-
-          {radar?.length > 0 && (
-            <div class="order-4 lg:col-start-2">
-              <div class="border-t border-white/10 pt-8">
-                <RadarChart data={radar} />
-              </div>
-            </div>
-          )}
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#07131a]">
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="h-[420px] w-full object-contain p-8"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-6 pb-20">
+    <section class="border-y border-white/10 bg-[#071923]">
+      <div class="zimo-shell grid gap-0 py-2 md:grid-cols-5">
+        {specs.map((item) => (
+          <div class="border-b border-white/10 py-5 md:border-b-0 md:border-r md:border-white/10 md:px-5 last:md:border-r-0">
+            <p class="text-xs uppercase tracking-[0.2em] text-white/40">{item.label}</p>
+            <p class="mt-2 text-sm font-semibold text-white/82">{item.value}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="zimo-shell grid gap-12 py-24 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="zimo-eyebrow">Produktlogikk</p>
+        <h2 class="mt-5 text-4xl font-semibold tracking-tight md:text-6xl">
+          Bygget for pilot, drift og læring.
+        </h2>
+      </div>
+
+      <div class="grid gap-5">
+        {principles.map((item) => (
+          <article class="zimo-panel rounded-xl p-6">
+            <h3 class="text-2xl font-semibold">{item.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/64">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="zimo-shell pb-24">
       <div class="border-t border-white/10 pt-10">
-        <h2 class="text-lg font-semibold md:text-2xl">Overview</h2>
-        <div class="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 md:text-base">
+        <div class="max-w-3xl text-base leading-relaxed text-white/72">
           <slot />
         </div>
       </div>
-
-      <p class="mt-12 text-center text-sm font-medium text-white/80">
-        Designed in Norway · European Supply Chain · Assembled in Norway
-      </p>
     </section>
   </main>
+
+  <Footer />
 </BaseLayout>

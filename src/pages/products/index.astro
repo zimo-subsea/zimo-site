@@ -1,170 +1,96 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 
-const visionProducts = [
+const pillars = [
   {
-    name: "Subsea Machine Vision Camera",
-    description:
-      "Ultra-low latency imaging with a wide field of view, built for deepwater deployments.",
-    status: "Available now",
-    href: "/products/camera",
-    image: "/products/camera.webp",
+    title: "Kamera under vann",
+    text: "En robust undervannsenhet med enkel elektronikk og GMSL-basert kameraretning.",
   },
   {
-    name: "Vision Processing Unit",
-    description:
-      "Edge AI processing with fast boot and multi-camera support in a compact, rugged enclosure.",
-    status: "Coming soon",
-    href: "#",
-    image: "/products/vpu.webp",
-  },
-];
-
-const comingSoon = [
-  {
-    name: "Lights",
-    summary: "High-lumen subsea illumination with adaptive control.",
+    title: "Gateway over vann",
+    text: "Topside-enheten tar imot bilde, håndterer videre prosessering og gjør systemet lettere å drifte.",
   },
   {
-    name: "FOG Gyro",
-    summary: "Precision inertial navigation for harsh environments.",
-  },
-  {
-    name: "Quartz Pressure Sensor",
-    summary: "High-accuracy depth and pressure monitoring.",
-  },
-  {
-    name: "Subsea Converter",
-    summary: "Power-efficient signal and protocol conversion.",
-  },
-  {
-    name: "Subsea Display",
-    summary: "Ruggedized display systems for subsea operations.",
+    title: "Operasjonell flate",
+    text: "Live video, opptak, status og support samles i en enkel nettleserbasert arbeidsflate.",
   },
 ];
 ---
 
-<BaseLayout title="ZiMO — Products">
+<BaseLayout
+  title="Zimo — System"
+  description="Zimo sitt første undervannskamerasystem kombinerer kamera, gateway, live video og enkel drift."
+>
   <Header />
 
-  <main class="bg-[#070a0f] text-white">
+  <main class="bg-[#05090b] text-white">
     <section class="relative overflow-hidden">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_700px_at_50%_30%,rgba(255,255,255,0.08),transparent_65%)]"></div>
-      <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-24 md:pb-24 md:pt-32">
-        <div class="max-w-2xl">
-          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
-            ZiMO Products
-          </p>
-          <h1 class="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
-            Designed for subsea vision, built for reliability.
+      <div class="absolute inset-0 bg-[radial-gradient(900px_420px_at_70%_18%,rgba(64,216,200,0.14),transparent_68%)]"></div>
+      <div class="zimo-shell relative grid gap-12 py-20 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:py-28">
+        <div>
+          <p class="zimo-eyebrow">System</p>
+          <h1 class="mt-6 max-w-4xl text-5xl font-semibold leading-tight tracking-tight md:text-7xl">
+            Kamera, gateway og live video i én løsning.
           </h1>
-          <p class="mt-6 text-sm leading-relaxed text-white/70 md:text-base">
-            Explore the vision platform that powers low-latency imaging and
-            real-time processing, with additional modules arriving soon.
+          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-white/70">
+            Første Zimo-system er laget rundt én praktisk idé: få pålitelig
+            visuell kontroll under vann uten at kunden må bygge hele
+            kamerakjeden selv.
           </p>
         </div>
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#07131a]">
+          <img
+            src="/products/camera.webp"
+            alt="Zimo undervannskamera"
+            class="h-[380px] w-full object-contain p-8"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
       </div>
     </section>
 
-    <section class="relative">
-      <div class="mx-auto max-w-6xl px-6 pb-16">
-        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+    <section class="zimo-shell pb-24">
+      <div class="grid gap-5 md:grid-cols-3">
+        {pillars.map((item) => (
+          <article class="zimo-panel rounded-xl p-6">
+            <div class="h-1 w-10 bg-[#a8fff2]"></div>
+            <h2 class="mt-6 text-2xl font-semibold">{item.title}</h2>
+            <p class="mt-4 text-sm leading-relaxed text-white/64">{item.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-2xl border border-white/10 bg-[#071923] p-7 md:p-10">
+        <p class="zimo-eyebrow">Pilotversjon</p>
+        <div class="mt-6 grid gap-8 lg:grid-cols-[1fr_0.9fr]">
           <div>
-            <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">
-              Vision
+            <h2 class="text-4xl font-semibold tracking-tight">
+              Første system skal valideres sammen med kunde.
             </h2>
-            <p class="mt-3 text-sm text-white/70 md:text-base">
-              Camera hardware and processing built as a unified, low-latency
-              system.
+            <p class="mt-5 text-base leading-relaxed text-white/70">
+              Pilotpakken er ikke låst. Den skal formes rundt en konkret
+              brukssituasjon, men hovedretningen er undervannskamera, kabel,
+              gateway, livevisning, enkel dokumentasjon og support.
             </p>
           </div>
-          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
-            Core Category
+          <div class="grid content-start gap-3 text-sm text-white/70">
+            <div class="border-l border-[#a8fff2]/60 pl-4">Oppdrett og settefisk</div>
+            <div class="border-l border-[#a8fff2]/60 pl-4">Vanninfrastruktur</div>
+            <div class="border-l border-[#a8fff2]/60 pl-4">Kai, anlegg og industriell inspeksjon</div>
           </div>
         </div>
-
-        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {visionProducts.map((product) => (
-            <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur transition hover:border-white/20 hover:bg-black/55">
-              <div class="flex items-center justify-center border-b border-white/10 bg-black/30 px-6 py-10">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  loading="lazy"
-                  class="h-40 w-auto object-contain transition duration-300 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div class="flex h-full flex-col gap-4 p-6">
-                <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  <span>Vision Platform</span>
-                  <span class={product.status === "Coming soon" ? "text-amber-300/80" : "text-emerald-300/80"}>
-                    {product.status}
-                  </span>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-semibold">{product.name}</h3>
-                  <p class="mt-3 text-sm leading-relaxed text-white/70">
-                    {product.description}
-                  </p>
-                </div>
-                <div class="mt-auto">
-                  {product.status === "Coming soon" ? (
-                    <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-semibold text-white/50">
-                      Coming soon
-                    </div>
-                  ) : (
-                    <a
-                      href={product.href}
-                      class="inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-red-600/30 transition hover:bg-red-500"
-                    >
-                      View product
-                      <span aria-hidden="true">›</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="relative">
-      <div class="mx-auto max-w-6xl px-6 pb-24">
-        <div class="rounded-3xl border border-white/10 bg-black/45 p-10 md:p-12">
-          <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-            <div>
-              <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">
-                Coming soon
-              </h2>
-              <p class="mt-3 text-sm text-white/70 md:text-base">
-                Expanding the platform with navigation, sensing, and control
-                modules.
-              </p>
-            </div>
-            <p class="text-xs font-semibold uppercase tracking-[0.4em] text-white/40">
-              Roadmap
-            </p>
-          </div>
-
-          <div class="mt-10 grid gap-4 md:grid-cols-2">
-            {comingSoon.map((product) => (
-              <div class="flex items-start justify-between gap-4 rounded-2xl border border-white/10 bg-black/30 px-5 py-4">
-                <div>
-                  <h3 class="text-lg font-semibold text-white/90">
-                    {product.name}
-                  </h3>
-                  <p class="mt-2 text-sm text-white/60">{product.summary}</p>
-                </div>
-                <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  Soon
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <a
+          href="/products/camera"
+          class="mt-8 inline-flex items-center justify-center rounded-md bg-[#a8fff2] px-5 py-3 text-sm font-semibold text-[#05090b] transition hover:bg-[#c6fff7]"
+        >
+          Les om systemretningen
+        </a>
       </div>
     </section>
   </main>
+
+  <Footer />
 </BaseLayout>

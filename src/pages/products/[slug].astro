@@ -16,14 +16,13 @@ const { Content } = await product.render();
 
 <ProductLayout
   title={product.data.title}
-  category={product.data.category}
+  eyebrow={product.data.eyebrow}
   summary={product.data.summary}
   tags={product.data.tags}
-  docsUrl={product.data.docsUrl}
   requestUrl={product.data.requestUrl}
-  media={product.data.media}
-  highlights={product.data.highlights}
-  radar={product.data.radar}
+  image={product.data.image}
+  specs={product.data.specs}
+  principles={product.data.principles}
 >
   <Content />
 </ProductLayout>

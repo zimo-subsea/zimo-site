@@ -1,11 +1,23 @@
 ---
-const { title = "ZiMO" } = Astro.props;
 import "../styles/global.css";
+
+const {
+  title = "Zimo",
+  description = "Zimo bygger robuste undervannskamerasystemer for oppdrett, vanninfrastruktur og industriell inspeksjon.",
+} = Astro.props;
 ---
-<html lang="en">
+
+<!doctype html>
+<html lang="no">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta name="theme-color" content="#05090b" />
     <title>{title}</title>
     <link
       rel="icon"
@@ -19,7 +31,7 @@ import "../styles/global.css";
       href="/favicon-dark.svg"
       media="(prefers-color-scheme: dark)"
     />
-    <link rel="icon" href="/favicon-light.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
   </head>
   <body>
     <slot />

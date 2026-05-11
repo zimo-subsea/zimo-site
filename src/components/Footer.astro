@@ -1,8 +1,33 @@
-<footer style="border-top:1px solid rgba(255,255,255,0.08); margin-top:36px;">
-  <div class="container muted" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
-    <div>© {new Date().getFullYear()} ZiMO</div>
-    <div style="display:flex; gap:14px;">
-      <a href="https://docs.zimo.no/" target="_blank" rel="noreferrer">Docs</a>
+<footer class="border-t border-white/10 bg-[#05090b]">
+  <div class="zimo-shell flex flex-col gap-8 py-10 md:flex-row md:items-start md:justify-between">
+    <div class="max-w-md">
+      <img
+        src="/brand/ZiMO_full_white.svg"
+        alt="Zimo"
+        class="h-8 w-auto"
+        loading="lazy"
+        decoding="async"
+      />
+      <p class="mt-4 text-sm leading-relaxed text-white/58">
+        Robuste undervannskamerasystemer for oppdrett, vanninfrastruktur og
+        industriell inspeksjon.
+      </p>
+    </div>
+
+    <div class="grid gap-2 text-sm text-white/62">
+      <a class="transition hover:text-white" href="/products">System</a>
+      <a class="transition hover:text-white" href="/about">Om Zimo</a>
+      <a class="transition hover:text-white" href="/contact">Kontakt</a>
+      <a class="transition hover:text-white" href="https://docs.zimo.no/" target="_blank" rel="noreferrer">
+        Teknisk dokumentasjon
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="zimo-shell flex flex-col gap-2 py-5 text-xs text-white/42 sm:flex-row sm:items-center sm:justify-between">
+      <span>© {new Date().getFullYear()} Zimo</span>
+      <span>Norsk undervannsteknologi under utvikling.</span>
     </div>
   </div>
 </footer>

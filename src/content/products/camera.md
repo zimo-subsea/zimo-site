@@ -1,53 +1,36 @@
 ---
-title: Subsea Machine Vision Camera
-category: Camera module
-summary: Compact, cost-effective subsea camera engineered for machine vision with ultra-low latency and reliable low-light performance.
+title: Zimo undervannskamerasystem
+eyebrow: Første systemretning
+summary: Robust undervannskamera med toppside-gateway, live video, opptak og enkel drift for krevende miljøer rundt vann.
+image:
+  src: /products/camera.webp
+  alt: Zimo undervannskamera
 tags:
-  - Ultra-low latency
-  - Machine vision
-  - Low-light
-  - Depth rated
-docsUrl: https://docs.zimo.no/
-requestUrl: /contact?topic=camera
-media:
-  hero:
-    src: /products/camera/hero.webp
-    alt: Subsea machine vision camera hero view.
-  detail:
-    src: /products/camera/detail.webp
-    alt: Detail view of the camera module housing.
-  video:
-    youtubeId: ScMzIvxBSi4
-    caption: Sample footage (compressed for web).
-  model:
-    src: /products/camera/model.glb
-    poster: /products/camera/poster.webp
-    alt: 3D model of the camera module.
-highlights:
-  - label: Output
-    value: SerDes
-  - label: Latency
-    value: Ultra-low
-  - label: Low-light
-    value: Optimized optics
-  - label: Depth rating
-    value: 6000m
-  - label: Integration
-    value: ZiMO modular stack
-radar:
-  - label: Latency
-    value: 9
-  - label: Low-light
-    value: 8
-  - label: Depth rating
-    value: 9
-  - label: Integration
-    value: 8
-  - label: Robustness
-    value: 9
-  - label: Ease of deployment
-    value: 7
+  - Live video
+  - Topside gateway
+  - Robust kamera
+  - Enkel drift
+requestUrl: /contact?topic=pilot
+specs:
+  - label: Kamera
+    value: GMSL-basert undervannsenhet
+  - label: Gateway
+    value: Jetson/SBC-retning
+  - label: Kabel
+    value: Første versjon rundt 15 m
+  - label: Lys
+    value: Ikke del av v1 med mindre kunder krever det
+  - label: Status
+    value: Under utvikling for pilot
+principles:
+  - title: Enkel undervannsenhet
+    text: Minst mulig elektronikk under vann og ingen bildebehandling i selve kameraet.
+  - title: Kontroll på toppen
+    text: Gateway og software håndterer livevisning, opptak, support og diagnostikk.
+  - title: Robusthet først
+    text: Kapsling, kabel, serviceflyt og EMI-resistens utvikles som sentrale designmål.
 ---
-ZiMO’s camera module is engineered for subsea environments where reliability and clarity matter. It integrates cleanly with ZiMO processing and lighting modules, delivering real-time performance in demanding machine vision and navigation pipelines.
 
-Primary applications include inspection, autonomy workflows, and low-light monitoring in ROV or AUV systems.
+Zimo sitt første system handler om å gjøre undervannsinnsikt praktisk: kamera under vann, gateway over vann og en enkel operasjonell flate for live video, opptak og dokumentasjon.
+
+Systemet er under utvikling. Første mål er å validere reell kundeverdi gjennom pilotmiljøer i Norge, særlig innen oppdrett, vanninfrastruktur og industriell inspeksjon.

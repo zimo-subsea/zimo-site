@@ -3,214 +3,69 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+const email = "mads.falk@zimo.no";
 const mailtoHref =
-  "mailto:sales@zimo.no?subject=Inquiry%20%E2%80%94%20ZiMO&body=Company:%0AProject:%0ATimeline:%0ADetails:";
+  "mailto:mads.falk@zimo.no?subject=Pilotdialog%20med%20Zimo&body=Hei%20Mads,%0A%0AJeg%20vil%20gjerne%20snakke%20om%20Zimo%20og%20mulig%20pilot.%0A%0AOrganisasjon:%0ABrukssituasjon:%0AHva%20vi%20%C3%B8nsker%20%C3%A5%20se%20under%20vann:%0A";
 ---
-<!--
-  Notes:
-  - Replace the phone number (+47 22 00 00 00) wherever it appears with the real company number.
-  - Update the three contact persons (name, role, email, direct line) in the Contact Persons section.
-  - Swap initials placeholders with professional headshots by replacing the divs with <img> tags.
--->
-<BaseLayout title="ZiMO — Contact" description="Contact ZiMO for inquiries, pricing, partnerships, and technical questions.">
+
+<BaseLayout
+  title="Zimo — Kontakt"
+  description="Kontakt Zimo for pilotdialog rundt robuste undervannskamerasystemer."
+>
   <Header />
 
-  <main class="bg-[#070a0f] text-white">
-    <section class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pb-16 pt-16 md:pb-20 md:pt-20">
-      <div class="flex flex-col gap-4">
-        <p class="text-sm uppercase tracking-[0.2em] text-white/60">Contact</p>
-        <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Contact ZiMO</h1>
-        <p class="max-w-2xl text-base text-white/75 sm:text-lg">
-          For inquiries, pricing, partnerships and technical questions.
+  <main class="bg-[#05090b] text-white">
+    <section class="zimo-shell grid gap-12 py-20 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:py-28">
+      <div>
+        <p class="zimo-eyebrow">Kontakt</p>
+        <h1 class="mt-6 text-5xl font-semibold leading-tight tracking-tight md:text-7xl">
+          La oss finne ut om Zimo passer deres miljø.
+        </h1>
+        <p class="mt-7 max-w-2xl text-lg leading-relaxed text-white/70">
+          Vi er spesielt interessert i norske miljøer som trenger bedre visuell
+          kontroll under vann og kan gi ærlig tilbakemelding i en tidlig pilotfase.
         </p>
       </div>
 
-      <div class="grid gap-10 border-y border-white/10 py-10 lg:grid-cols-[1.3fr_0.7fr]">
-        <div class="flex flex-col gap-6">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
-            <p class="text-sm uppercase tracking-[0.2em] text-white/60">Primary contact</p>
-            <div class="mt-4 flex flex-col gap-3">
-              <div class="text-3xl font-semibold text-white sm:text-4xl">sales@zimo.no</div>
-              <div class="flex flex-wrap gap-3">
-                <a
-                  class="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-[#070a0f] transition hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  href={mailtoHref}
-                >
-                  Email sales@zimo.no
-                </a>
-                <button
-                  class="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white transition hover:border-white/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  type="button"
-                  data-copy="sales@zimo.no"
-                  aria-label="Copy sales email"
-                >
-                  Copy email
-                </button>
-              </div>
-              <p class="text-sm text-white/65">We normally respond within 24 hours on business days.</p>
-              <p class="text-sm text-white/60">Visits by appointment only.</p>
-              <p class="text-xs text-emerald-300" data-copy-feedback aria-live="polite"></p>
-            </div>
-          </div>
+      <div class="zimo-panel rounded-2xl p-7">
+        <p class="text-xs uppercase tracking-[0.22em] text-white/42">Direkte kontakt</p>
+        <h2 class="mt-4 text-3xl font-semibold">Mads Falk</h2>
+        <p class="mt-2 text-sm text-white/58">Zimo</p>
 
-          <div class="flex flex-wrap items-center gap-3 text-sm text-white/70">
-            <span class="text-white">If urgent, call.</span>
-            <a
-              class="font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-              href="tel:+4722000000"
-            >
-              +47 22 00 00 00
-            </a>
-            <button
-              class="text-white/70 underline decoration-white/30 underline-offset-4 transition hover:text-white"
-              type="button"
-              data-copy="+47 22 00 00 00"
-              aria-label="Copy phone number"
-            >
-              Copy phone
-            </button>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-6">
-          <div class="text-sm uppercase tracking-[0.2em] text-white/60">Office</div>
-          <address class="not-italic text-base text-white">
-            ZiMO AS<br />
-            Skøyen Næringspark 8<br />
-            0270 Oslo, Norway
-          </address>
+        <div class="mt-8 grid gap-3">
           <a
-            class="text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-            href="https://maps.google.com/?q=Sk%C3%B8yen%20N%C3%A6ringspark%208%2C%200270%20Oslo%2C%20Norway"
-            target="_blank"
-            rel="noreferrer"
+            href={mailtoHref}
+            class="inline-flex items-center justify-center rounded-md bg-[#a8fff2] px-5 py-3 text-sm font-semibold text-[#05090b] transition hover:bg-[#c6fff7]"
           >
-            Open in Google Maps
+            Send e-post
           </a>
+          <button
+            type="button"
+            data-copy={email}
+            class="inline-flex items-center justify-center rounded-md border border-white/18 bg-white/5 px-5 py-3 text-sm font-semibold text-white/86 transition hover:border-white/36 hover:bg-white/9"
+          >
+            Kopier {email}
+          </button>
+          <p class="min-h-5 text-xs text-[#a8fff2]" data-copy-feedback aria-live="polite"></p>
         </div>
       </div>
+    </section>
 
-      <div class="grid gap-6 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="flex flex-col gap-2 text-sm text-white/70">
-          <span class="text-xs uppercase tracking-[0.2em] text-white/60">Phone</span>
-          <a
-            class="text-base font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-            href="tel:+4722000000"
-          >
-            +47 22 00 00 00
-          </a>
+    <section class="border-y border-white/10 bg-[#071923]">
+      <div class="zimo-shell grid gap-8 py-12 md:grid-cols-3">
+        <div>
+          <p class="text-xs uppercase tracking-[0.22em] text-white/42">Bra pilotcase</p>
+          <p class="mt-2 text-lg font-semibold">Et konkret undervannsproblem</p>
         </div>
-        <div class="flex flex-col gap-2 text-sm text-white/70">
-          <span class="text-xs uppercase tracking-[0.2em] text-white/60">Address</span>
-          <span class="text-base text-white">Skøyen Næringspark 8, Oslo</span>
+        <div>
+          <p class="text-xs uppercase tracking-[0.22em] text-white/42">Første dialog</p>
+          <p class="mt-2 text-lg font-semibold">Problem og brukssituasjon</p>
         </div>
-        <div class="flex flex-col gap-2 text-sm text-white/70">
-          <span class="text-xs uppercase tracking-[0.2em] text-white/60">Visits</span>
-          <span class="text-base text-white">By appointment only</span>
-        </div>
-        <div class="flex flex-col gap-2 text-sm text-white/70">
-          <span class="text-xs uppercase tracking-[0.2em] text-white/60">Org. number</span>
-          <span class="text-base text-white">930 123 456</span>
+        <div>
+          <p class="text-xs uppercase tracking-[0.22em] text-white/42">Neste steg</p>
+          <p class="mt-2 text-lg font-semibold">Pilotomfang og teknisk fit</p>
         </div>
       </div>
-
-      <section class="flex flex-col gap-6" aria-labelledby="contact-persons">
-        <div class="flex items-end justify-between gap-4">
-          <h2 id="contact-persons" class="text-2xl font-semibold text-white">Contact persons</h2>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          <div class="flex items-start gap-4 border-t border-white/10 pt-6">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-lg font-semibold text-white">
-              EL
-            </div>
-            <div class="flex flex-col gap-1">
-              <p class="text-base font-semibold text-white">Erik Lund</p>
-              <p class="text-sm text-white/70">Head of Sales</p>
-              <a
-                class="text-sm text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-                href="mailto:erik.lund@zimo.no"
-              >
-                erik.lund@zimo.no
-              </a>
-              <p class="text-xs text-white/50">Direct: +47 22 10 10 10</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4 border-t border-white/10 pt-6">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-lg font-semibold text-white">
-              MA
-            </div>
-            <div class="flex flex-col gap-1">
-              <p class="text-base font-semibold text-white">Mia Andersen</p>
-              <p class="text-sm text-white/70">Partnerships</p>
-              <a
-                class="text-sm text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-                href="mailto:mia.andersen@zimo.no"
-              >
-                mia.andersen@zimo.no
-              </a>
-              <p class="text-xs text-white/50">Direct: +47 22 10 10 20</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4 border-t border-white/10 pt-6">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-lg font-semibold text-white">
-              TJ
-            </div>
-            <div class="flex flex-col gap-1">
-              <p class="text-base font-semibold text-white">Tobias Johansen</p>
-              <p class="text-sm text-white/70">Technical Lead</p>
-              <a
-                class="text-sm text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-                href="mailto:tobias.johansen@zimo.no"
-              >
-                tobias.johansen@zimo.no
-              </a>
-              <p class="text-xs text-white/50">Direct: +47 22 10 10 30</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid gap-8 border-y border-white/10 py-10 lg:grid-cols-[1fr_1.1fr]" aria-labelledby="location">
-        <div class="flex flex-col gap-4">
-          <h2 id="location" class="text-2xl font-semibold text-white">Location</h2>
-          <address class="not-italic text-white/75">
-            ZiMO AS<br />
-            Skøyen Næringspark 8<br />
-            0270 Oslo, Norway
-          </address>
-          <a
-            class="text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-            href="https://maps.google.com/?q=Sk%C3%B8yen%20N%C3%A6ringspark%208%2C%200270%20Oslo%2C%20Norway"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open in Google Maps
-          </a>
-        </div>
-        <a
-          class="group relative block overflow-hidden rounded-2xl border border-white/10"
-          href="https://maps.google.com/?q=Sk%C3%B8yen%20N%C3%A6ringspark%208%2C%200270%20Oslo%2C%20Norway"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Open map location in Google Maps"
-        >
-          <iframe
-            class="h-60 w-full grayscale transition duration-300 group-hover:grayscale-0 sm:h-72"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2001.7917837959734!2d10.683589!3d59.922288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416f71c4f3a0a9%3A0x9065cf19f680c1cb!2sSk%C3%B8yen%20N%C3%A6ringspark%208%2C%200270%20Oslo!5e0!3m2!1sen!2sno!4v1733411200000!5m2!1sen!2sno"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="ZiMO office location"
-          ></iframe>
-        </a>
-      </section>
-
-      <section class="flex flex-col gap-2 text-sm text-white/60" aria-label="Legal">
-        <span class="text-xs uppercase tracking-[0.2em] text-white/50">Company information</span>
-        <p class="text-white/70">ZiMO AS · Organization number: 930 123 456</p>
-      </section>
     </section>
   </main>
 
@@ -228,16 +83,14 @@ const mailtoHref =
       try {
         await navigator.clipboard.writeText(value);
         if (feedback) {
-          feedback.textContent = `Copied ${value}`;
+          feedback.textContent = "E-post kopiert.";
           window.setTimeout(() => {
-            if (feedback.textContent === `Copied ${value}`) {
-              feedback.textContent = "";
-            }
-          }, 2000);
+            feedback.textContent = "";
+          }, 2200);
         }
-      } catch (error) {
+      } catch {
         if (feedback) {
-          feedback.textContent = "Unable to copy";
+          feedback.textContent = "Kunne ikke kopiere automatisk.";
         }
       }
     });
