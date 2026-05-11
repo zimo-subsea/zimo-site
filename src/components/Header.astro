@@ -1,50 +1,85 @@
 ---
+const { tone = "light" } = Astro.props;
+
 const nav = [
-  { label: "System", href: "/products" },
-  { label: "Pilot", href: "/#pilot" },
-  { label: "Om Zimo", href: "/about" },
-  { label: "Docs", href: "https://docs.zimo.no/", external: true },
-  { label: "Kontakt", href: "/contact" },
+  { label: "Hovedside", href: "/" },
+  { label: "Pilotprosjekt", href: "/#pilot" },
 ];
+
+const isDark = tone === "dark";
 ---
 
-<header class="sticky top-0 z-50 border-b border-[#d9e2e2] bg-white/88 backdrop-blur-xl">
-  <div class="zimo-shell flex h-20 items-center justify-between">
-    <a href="/" class="flex items-center gap-3 text-[#071923]" aria-label="Zimo hjem">
+<header
+  class:list={[
+    "z-50 border-b backdrop-blur-xl",
+    isDark
+      ? "absolute inset-x-0 top-0 border-white/10 bg-[#071923]/42 text-white"
+      : "sticky top-0 border-[#d9e2e2] bg-white/88 text-[#071923]",
+  ]}
+>
+  <div class="zimo-shell flex h-[5.5rem] items-center justify-between">
+    <a href="/" class="flex items-center" aria-label="Zimo hjem">
       <img
-        src="/brand/ZiMO_symbol_black.svg"
+        src="/brand/ZiMO_full_white.svg"
         alt=""
-        class="h-8 w-auto"
+        class:list={[
+          "h-10 w-auto",
+          !isDark && "[filter:brightness(0)]",
+        ]}
         loading="eager"
         decoding="async"
       />
-      <span class="text-xl font-semibold tracking-tight">Zimo</span>
     </a>
 
-    <nav class="hidden items-center gap-8 text-sm font-medium text-[#516066] md:flex">
+    <nav
+      class:list={[
+        "hidden items-center gap-8 text-sm font-semibold md:flex",
+        isDark ? "text-white/88" : "text-[#516066]",
+      ]}
+    >
       {nav.map((item) => (
         <a
           href={item.href}
-          target={item.external ? "_blank" : undefined}
-          rel={item.external ? "noreferrer" : undefined}
-          class="transition hover:text-[#071923]"
+          class:list={[
+            "inline-flex cursor-pointer items-center gap-2 transition-colors duration-200",
+            isDark ? "hover:text-[#a8fff2]" : "hover:text-[#071923]",
+          ]}
         >
           {item.label}
         </a>
       ))}
     </nav>
 
-    <div class="hidden items-center gap-3 md:flex">
+    <div class="hidden items-center gap-6 md:flex">
+      <a
+        href="https://docs.zimo.no/"
+        target="_blank"
+        rel="noreferrer"
+        class:list={[
+          "text-sm font-semibold transition-colors duration-200",
+          isDark ? "text-white/78 hover:text-white" : "text-[#516066] hover:text-[#071923]",
+        ]}
+      >
+        Docs
+      </a>
       <a
         href="/contact"
-        class="inline-flex items-center justify-center rounded-md border border-[#22b8aa]/25 bg-[#eef5f5] px-4 py-2 text-sm font-semibold text-[#0d776f] transition hover:border-[#22b8aa]/55 hover:bg-[#dff2f0]"
+        class:list={[
+          "inline-flex cursor-pointer items-center justify-center text-sm font-semibold transition-colors duration-200",
+          isDark ? "text-white hover:text-[#a8fff2]" : "text-[#071923] hover:text-[#0d776f]",
+        ]}
       >
-        Start pilotdialog
+        Kontakt
       </a>
     </div>
 
     <button
-      class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[#d9e2e2] bg-white text-[#071923] transition hover:border-[#22b8aa]/55 md:hidden"
+      class:list={[
+        "inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-sm border transition-colors duration-200 md:hidden",
+        isDark
+          ? "border-white/18 bg-white/8 text-white hover:border-[#a8fff2]/55"
+          : "border-[#d9e2e2] bg-white text-[#071923] hover:border-[#22b8aa]/55",
+      ]}
       type="button"
       aria-label="Åpne meny"
       aria-expanded="false"
@@ -67,23 +102,47 @@ const nav = [
   </div>
 
   <div class="zimo-shell hidden pb-5 md:hidden" data-mobile-menu data-open="false">
-    <div class="zimo-panel grid gap-2 rounded-xl p-3 text-sm text-[#516066]">
+    <div
+      class:list={[
+        "grid gap-2 rounded-sm border p-3 text-sm shadow-[0_22px_80px_rgba(0,0,0,0.18)]",
+        isDark
+          ? "border-white/12 bg-[#071923]/94 text-white/76"
+          : "border-[#d9e2e2] bg-white text-[#516066]",
+      ]}
+    >
       {nav.map((item) => (
         <a
           href={item.href}
-          target={item.external ? "_blank" : undefined}
-          rel={item.external ? "noreferrer" : undefined}
-          class="flex items-center justify-between rounded-lg px-3 py-3 transition hover:bg-[#eef5f5] hover:text-[#071923]"
+          class:list={[
+            "flex cursor-pointer items-center justify-between rounded-sm px-3 py-3 transition-colors duration-200",
+            isDark ? "hover:bg-white/8 hover:text-white" : "hover:bg-[#eef5f5] hover:text-[#071923]",
+          ]}
         >
           <span>{item.label}</span>
-          <span class="text-[#0d776f]/60">→</span>
+          <span class={isDark ? "text-[#a8fff2]" : "text-[#0d776f]/60"}>→</span>
         </a>
       ))}
       <a
-        href="/contact"
-        class="mt-2 inline-flex items-center justify-center rounded-md bg-[#071923] px-4 py-3 text-sm font-semibold text-white"
+        href="https://docs.zimo.no/"
+        target="_blank"
+        rel="noreferrer"
+        class:list={[
+          "flex cursor-pointer items-center justify-between rounded-sm px-3 py-3 transition-colors duration-200",
+          isDark ? "hover:bg-white/8 hover:text-white" : "hover:bg-[#eef5f5] hover:text-[#071923]",
+        ]}
       >
-        Start pilotdialog
+        <span>Docs</span>
+        <span class={isDark ? "text-[#a8fff2]" : "text-[#0d776f]/60"}>→</span>
+      </a>
+      <a
+        href="/contact"
+        class:list={[
+          "flex cursor-pointer items-center justify-between rounded-sm px-3 py-3 font-semibold transition-colors duration-200",
+          isDark ? "hover:bg-white/8 hover:text-white" : "hover:bg-[#eef5f5] hover:text-[#071923]",
+        ]}
+      >
+        <span>Kontakt</span>
+        <span class={isDark ? "text-[#a8fff2]" : "text-[#0d776f]/60"}>→</span>
       </a>
     </div>
   </div>

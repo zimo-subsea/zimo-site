@@ -3,27 +3,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const useCases = [
-  {
-    title: "Oppdrett og settefisk",
-    text: "Fast undervannsinnsikt i kar, merder og operasjoner der live bilde og dokumentasjon kan redusere usikkerhet.",
-  },
-  {
-    title: "Vanninfrastruktur",
-    text: "Visuell kontroll i basseng, kummer, rør, inntak og andre miljøer der inspeksjon ofte er tungvint.",
-  },
-  {
-    title: "Industriell inspeksjon",
-    text: "En praktisk kameraflate for kai, anlegg, testmiljøer og tekniske installasjoner rundt vann.",
-  },
-];
+const heroImage = "/placeholders/lofoten-fish-farm.jpg";
+const farmImage = "/placeholders/aquaculture-aerial.jpg";
+const underwaterImage = "/placeholders/underwater-rocks.jpg";
 
 const systemParts = [
-  "Robust undervannskamera",
-  "Kabel og toppside-gateway",
-  "Live video i nettleser",
-  "Opptak og dokumentasjon",
-  "Status, support og enkel drift",
+  {
+    label: "01",
+    title: "Undervannsenhet",
+    text: "Robust kameramodul for krevende miljøer der inspeksjon normalt krever mer tungvint utstyr.",
+  },
+  {
+    label: "02",
+    title: "Toppside-gateway",
+    text: "Kabel og gateway samler signal, drift og videre prosessering over vann.",
+  },
+  {
+    label: "03",
+    title: "Live arbeidsflate",
+    text: "Nettleserbasert live video, opptak, status og dokumentasjon for operatør og beslutningstaker.",
+  },
 ];
 ---
 
@@ -31,52 +30,46 @@ const systemParts = [
   title="Zimo — Visuell kontroll under vann"
   description="Zimo bygger robuste undervannskamerasystemer for oppdrett, vanninfrastruktur og industriell inspeksjon."
 >
-  <Header />
+  <Header tone="dark" />
 
-  <main class="bg-white text-[#0b1114]">
-    <section class="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f6f8f8_100%)]">
+  <main id="main-content" class="bg-white text-[#0b1114]">
+    <section class="relative min-h-[92vh] overflow-hidden bg-[#071923] text-white">
       <img
-        src="/hero/camera.webp"
-        alt="Zimo undervannskamera"
-        class="absolute inset-y-0 right-0 h-full w-full object-contain object-right-bottom opacity-18 md:w-[62%] md:opacity-28"
+        src={heroImage}
+        alt="Kystlandskap med fjell og hav"
+        class="absolute inset-0 h-full w-full object-cover"
         loading="eager"
         decoding="async"
       />
-      <div class="absolute inset-0 bg-[radial-gradient(900px_460px_at_72%_38%,rgba(34,184,170,0.13),transparent_68%)]"></div>
-      <div class="absolute inset-x-0 bottom-0 h-px bg-[#d9e2e2]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,25,35,0.78)_0%,rgba(7,25,35,0.18)_38%,rgba(7,25,35,0.82)_100%)]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,25,35,0.62)_0%,rgba(7,25,35,0.18)_48%,rgba(7,25,35,0.34)_100%)]"></div>
 
-      <div class="zimo-shell relative flex min-h-[calc(100vh-5rem)] items-center py-16">
-        <div class="max-w-4xl">
-          <p class="zimo-eyebrow">Robuste undervannskamerasystemer</p>
-          <h1 class="mt-7 max-w-4xl text-5xl font-semibold leading-[0.96] tracking-tight text-[#071923] sm:text-6xl lg:text-8xl">
-            Visuell kontroll
-            <span class="text-[#0d776f]">under vann.</span>
+      <div class="zimo-shell relative flex min-h-[92vh] items-center pb-20 pt-36">
+        <div class="max-w-5xl">
+          <p class="zimo-mono text-xs font-semibold uppercase tracking-[0.28em] text-[#a8fff2]">Norsk undervannsteknologi</p>
+          <h1 class="mt-7 max-w-5xl text-5xl font-semibold leading-[0.98] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            Kontroll på det som skjer
+            <span class="text-[#a8fff2]">under overflaten.</span>
           </h1>
-          <p class="mt-8 max-w-2xl text-lg leading-relaxed text-[#516066] md:text-xl">
+          <p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/76 md:text-xl">
             Zimo kombinerer undervannskamera, toppside-gateway, live video,
             opptak og enkel drift i ett robust system for krevende maritime og
             industrielle miljøer.
           </p>
-          <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div class="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
             <a
               href="/contact"
-              class="inline-flex items-center justify-center rounded-md bg-[#071923] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0d2a35]"
+              class="inline-flex cursor-pointer items-center justify-center rounded-sm bg-white px-6 py-3.5 text-sm font-semibold text-[#071923] transition-colors duration-200 hover:bg-[#f97316] hover:text-white"
             >
               Start pilotdialog
-            </a>
-            <a
-              href="/products"
-              class="inline-flex items-center justify-center rounded-md border border-[#d9e2e2] bg-white px-6 py-3 text-sm font-semibold text-[#071923] transition hover:border-[#22b8aa]/60 hover:bg-[#eef5f5]"
-            >
-              Se systemet
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="border-y border-[#d9e2e2] bg-white">
-      <div class="zimo-shell grid gap-8 py-8 md:grid-cols-3">
+    <section class="bg-white">
+      <div class="zimo-shell grid gap-8 py-10 md:grid-cols-3">
         <div>
           <p class="text-xs uppercase tracking-[0.22em] text-[#516066]">Fokus</p>
           <p class="mt-2 text-lg font-semibold text-[#071923]">Pilotklar kundeverdi</p>
@@ -92,95 +85,114 @@ const systemParts = [
       </div>
     </section>
 
-    <section id="system" class="zimo-shell py-24">
-      <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div>
-          <p class="zimo-eyebrow">Hva vi bygger</p>
-          <h2 class="mt-5 max-w-xl text-4xl font-semibold tracking-tight text-[#071923] md:text-6xl">
-            Et komplett system, ikke bare et kamera.
-          </h2>
-        </div>
-        <div class="grid gap-5">
-          <p class="max-w-3xl text-lg leading-relaxed text-[#516066]">
-            Kameraet gir bildet. Gatewayen og programvaren gjør det brukbart:
-            livevisning, opptak, status, enkel feilsøking og deling med de som
-            faktisk skal ta beslutningen.
-          </p>
-          <div class="grid gap-3 sm:grid-cols-2">
-            {systemParts.map((part) => (
-              <div class="zimo-panel rounded-lg px-4 py-4 text-sm font-semibold text-[#071923]">
-                {part}
-              </div>
-            ))}
+    <section id="system" class="bg-white py-24">
+      <div class="zimo-shell">
+        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p class="zimo-eyebrow">Hva vi bygger</p>
+            <h2 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight text-[#071923] md:text-6xl">
+              En praktisk kamerakjede for beslutninger under vann.
+            </h2>
+          </div>
+          <div class="max-w-2xl lg:justify-self-end">
+            <p class="text-lg leading-relaxed text-[#516066]">
+              Kameraet gir bildet. Gatewayen og programvaren gjør det mulig å
+              se, dokumentere og dele funn uten at kunden må bygge hele
+              kamerakjeden selv.
+            </p>
+            <a
+              href="https://docs.zimo.no/"
+              target="_blank"
+              rel="noreferrer"
+              class="mt-7 inline-flex cursor-pointer items-center gap-3 border-b border-[#0d776f]/45 pb-1 text-sm font-semibold text-[#0d776f] transition-colors duration-200 hover:border-[#071923] hover:text-[#071923]"
+            >
+              Les tekniske dokumenter
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="bg-[#f6f8f8] py-24">
-      <div class="zimo-shell">
-        <div class="max-w-3xl">
-          <p class="zimo-eyebrow">Bruksområder</p>
-          <h2 class="mt-5 text-4xl font-semibold tracking-tight text-[#071923] md:text-6xl">
-            Bygget for miljøer der det er vanskelig å se.
-          </h2>
-        </div>
-
-        <div class="mt-12 grid gap-5 md:grid-cols-3">
-          {useCases.map((item) => (
-            <article class="zimo-panel rounded-xl p-6">
-              <div class="h-1 w-10 bg-[#22b8aa]"></div>
-              <h3 class="mt-6 text-2xl font-semibold text-[#071923]">{item.title}</h3>
-              <p class="mt-4 text-sm leading-relaxed text-[#516066]">{item.text}</p>
+        <div class="mt-14 grid gap-px overflow-hidden rounded-sm border border-[#d9e2e2] bg-[#d9e2e2] lg:grid-cols-3">
+          {systemParts.map((part) => (
+            <article class="bg-[#f8fbfb] p-7 transition-colors duration-200 hover:bg-white">
+              <p class="zimo-mono text-xs font-semibold text-[#0d776f]">{part.label}</p>
+              <h3 class="mt-8 text-2xl font-semibold tracking-tight text-[#071923]">
+                {part.title}
+              </h3>
+              <p class="mt-4 text-sm leading-relaxed text-[#516066]">
+                {part.text}
+              </p>
             </article>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="zimo-shell grid gap-12 py-24 lg:grid-cols-[1fr_1fr] lg:items-center">
-      <div class="relative overflow-hidden rounded-2xl border border-[#d9e2e2] bg-[#f6f8f8]">
+    <section class="grid bg-[#071923] text-white lg:grid-cols-2">
+      <div class="relative min-h-[520px] overflow-hidden">
         <img
-          src="/products/camera.webp"
-          alt="Zimo kameramodul"
-          class="h-full min-h-[360px] w-full object-contain p-8"
+          src={farmImage}
+          alt="Fiskemerder sett fra luften"
+          class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
           decoding="async"
         />
-        <div class="absolute inset-0 bg-[radial-gradient(600px_300px_at_50%_42%,rgba(34,184,170,0.12),transparent_68%)]"></div>
+        <div class="absolute inset-0 bg-[#071923]/24"></div>
       </div>
 
-      <div>
-        <p class="zimo-eyebrow">Designfilosofi</p>
-        <h2 class="mt-5 text-4xl font-semibold tracking-tight text-[#071923] md:text-6xl">
+      <div class="px-5 py-20 sm:px-8 lg:px-16 lg:py-24">
+          <p class="zimo-mono text-xs font-semibold uppercase tracking-[0.28em] text-[#a8fff2]">Designfilosofi</p>
+        <h2 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight md:text-6xl">
           Mindre elektronikk under vann. Mer kontroll på toppen.
         </h2>
-        <p class="mt-6 text-lg leading-relaxed text-[#516066]">
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/72">
           Første systemretning holder undervannsenheten enkel og robust. Kameraet
           sender rådata til en toppside-gateway, der bilde, opptak, support og
           drift håndteres.
         </p>
-        <div class="mt-8 grid gap-4 text-sm text-[#516066]">
-          <div class="border-l border-[#22b8aa]/70 pl-4">
-            Første kamera er planlagt uten innebygd lys, med mindre kundene viser
-            at det er nødvendig.
+        <div class="mt-10 grid gap-5 text-sm text-white/68">
+          <div class="border-l border-[#a8fff2]/70 pl-5">
+            Undervannsenheten holdes enkel, servicevennlig og robust i møte med
+            krevende maritime miljøer.
           </div>
-          <div class="border-l border-[#22b8aa]/70 pl-4">
+          <div class="border-l border-[#a8fff2]/70 pl-5">
             Systemet utvikles for robusthet, servicevennlighet og høy
             EMI-resistens som designmål.
           </div>
-          <div class="border-l border-[#22b8aa]/70 pl-4">
+          <div class="border-l border-[#a8fff2]/70 pl-5">
             Produktet formes videre gjennom pilotkunder og reelle bruksmiljøer.
           </div>
         </div>
       </div>
     </section>
 
+    <section class="grid bg-white lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="px-5 py-20 sm:px-8 lg:px-16 lg:py-24">
+        <p class="zimo-eyebrow">Live bilde</p>
+        <h2 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight text-[#071923] md:text-6xl">
+          Fra uklart problem til delbart beslutningsgrunnlag.
+        </h2>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-[#516066]">
+          Zimo skal gjøre undervannsinspeksjon lettere å bruke i hverdagen:
+          operatører får bilde, opptak og status uten tunge spesialoppsett.
+        </p>
+      </div>
+      <div class="relative min-h-[460px] overflow-hidden">
+        <img
+          src={underwaterImage}
+          alt="Undervannsmiljø som placeholder"
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.2),rgba(255,255,255,0))]"></div>
+      </div>
+    </section>
+
     <section id="pilot" class="relative overflow-hidden bg-[#071923] text-white">
-      <div class="absolute inset-0 bg-[radial-gradient(900px_420px_at_80%_10%,rgba(168,255,242,0.14),transparent_64%)]"></div>
       <div class="zimo-shell relative grid gap-10 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-[#a8fff2]">Pilotfase</p>
+          <p class="zimo-mono text-xs font-semibold uppercase tracking-[0.28em] text-[#a8fff2]">Pilotfase</p>
           <h2 class="mt-5 text-4xl font-semibold tracking-tight md:text-6xl">
             Vi søker første pilotmiljø.
           </h2>
@@ -191,7 +203,7 @@ const systemParts = [
           </p>
         </div>
 
-        <div class="rounded-2xl border border-white/12 bg-white/[0.06] p-7 shadow-[0_24px_80px_rgba(0,0,0,0.18)]">
+        <div class="border-l border-white/18 pl-8">
           <h3 class="text-2xl font-semibold">En god pilot har:</h3>
           <ul class="mt-6 grid gap-4 text-sm leading-relaxed text-white/68">
             <li>Et konkret sted der undervannsbilde gir bedre beslutninger.</li>
@@ -201,7 +213,7 @@ const systemParts = [
           </ul>
           <a
             href="/contact"
-            class="mt-7 inline-flex items-center justify-center rounded-md bg-[#a8fff2] px-5 py-3 text-sm font-semibold text-[#071923] transition hover:bg-[#c6fff7]"
+            class="mt-7 inline-flex cursor-pointer items-center justify-center rounded-sm bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#fb8a3c]"
           >
             Snakk med oss om pilot
           </a>

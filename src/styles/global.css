@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -24,7 +25,7 @@
   body {
     @apply min-h-screen bg-white text-[#0b1114] antialiased;
     font-family:
-      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Exo, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       sans-serif;
   }
 
@@ -51,6 +52,7 @@
 
   .zimo-eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.28em] text-[#0d776f];
+    font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
   .zimo-panel {
@@ -59,5 +61,13 @@
 
   .zimo-muted {
     @apply text-[#516066];
+  }
+
+  .zimo-mono {
+    font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  .zimo-skip-link {
+    @apply fixed left-4 top-4 z-[100] -translate-y-24 rounded-sm bg-white px-4 py-3 text-sm font-semibold text-[#071923] shadow-lg transition-transform duration-200 focus:translate-y-0;
   }
 }

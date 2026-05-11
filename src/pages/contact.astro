@@ -4,66 +4,107 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const email = "mads.falk@zimo.no";
+const contactImage = "/placeholders/underwater-rocks.jpg";
 const mailtoHref =
   "mailto:mads.falk@zimo.no?subject=Pilotdialog%20med%20Zimo&body=Hei%20Mads,%0A%0AJeg%20vil%20gjerne%20snakke%20om%20Zimo%20og%20mulig%20pilot.%0A%0AOrganisasjon:%0ABrukssituasjon:%0AHva%20vi%20%C3%B8nsker%20%C3%A5%20se%20under%20vann:%0A";
+
+const steps = [
+  {
+    label: "01",
+    title: "Problem",
+    text: "Hvor trenger dere bedre visuell kontroll under vann?",
+  },
+  {
+    label: "02",
+    title: "Miljø",
+    text: "Hvordan ser installasjon, drift og ansvar ut i praksis?",
+  },
+  {
+    label: "03",
+    title: "Pilot",
+    text: "Hva må testes for at løsningen skal være verdifull?",
+  },
+];
 ---
 
 <BaseLayout
   title="Zimo — Kontakt"
   description="Kontakt Zimo for pilotdialog rundt robuste undervannskamerasystemer."
 >
-  <Header />
+  <Header tone="dark" />
 
-  <main class="bg-white text-[#0b1114]">
-    <section class="zimo-shell grid gap-12 py-20 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:py-28">
-      <div>
-        <p class="zimo-eyebrow">Kontakt</p>
-        <h1 class="mt-6 text-5xl font-semibold leading-tight tracking-tight text-[#071923] md:text-7xl">
-          La oss finne ut om Zimo passer deres miljø.
-        </h1>
-        <p class="mt-7 max-w-2xl text-lg leading-relaxed text-[#516066]">
-          Vi er spesielt interessert i norske miljøer som trenger bedre visuell
-          kontroll under vann og kan gi ærlig tilbakemelding i en tidlig pilotfase.
-        </p>
-      </div>
+  <main id="main-content" class="bg-white text-[#0b1114]">
+    <section class="relative overflow-hidden bg-[#071923] text-white">
+      <img
+        src={contactImage}
+        alt="Undervannsmiljø"
+        class="absolute inset-0 h-full w-full object-cover opacity-44"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,25,35,0.86)_0%,rgba(7,25,35,0.68)_45%,rgba(7,25,35,0.94)_100%)]"></div>
 
-      <div class="zimo-panel rounded-2xl p-7">
-        <p class="text-xs uppercase tracking-[0.22em] text-[#516066]">Direkte kontakt</p>
-        <h2 class="mt-4 text-3xl font-semibold text-[#071923]">Mads Falk</h2>
-        <p class="mt-2 text-sm text-[#516066]">Zimo</p>
+      <div class="zimo-shell relative grid min-h-[82vh] gap-14 pb-20 pt-36 lg:grid-cols-[1.05fr_0.85fr] lg:items-center">
+        <div>
+          <p class="zimo-mono text-xs font-semibold uppercase tracking-[0.28em] text-[#a8fff2]">Kontakt</p>
+          <h1 class="mt-7 max-w-4xl text-5xl font-semibold leading-[0.98] text-white sm:text-6xl md:text-7xl">
+            La oss finne ut om Zimo passer deres miljø.
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
+            Vi ser etter norske aktører som har et konkret undervannsproblem og
+            vil teste live bilde, opptak og dokumentasjon i en tidlig pilot.
+          </p>
+        </div>
 
-        <div class="mt-8 grid gap-3">
-          <a
-            href={mailtoHref}
-            class="inline-flex items-center justify-center rounded-md bg-[#071923] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0d2a35]"
-          >
-            Send e-post
-          </a>
-          <button
-            type="button"
-            data-copy={email}
-            class="inline-flex items-center justify-center rounded-md border border-[#d9e2e2] bg-white px-5 py-3 text-sm font-semibold text-[#071923] transition hover:border-[#22b8aa]/60 hover:bg-[#eef5f5]"
-          >
-            Kopier {email}
-          </button>
-          <p class="min-h-5 text-xs text-[#0d776f]" data-copy-feedback aria-live="polite"></p>
+        <div class="w-full max-w-md border border-white/14 bg-white/[0.08] p-7 shadow-[0_24px_80px_rgba(0,0,0,0.18)] backdrop-blur-md lg:justify-self-end">
+          <p class="zimo-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#a8fff2]">Direkte kontakt</p>
+          <h2 class="mt-5 text-3xl font-semibold">Mads Falk</h2>
+          <p class="mt-2 text-sm text-white/62">Zimo</p>
+
+          <div class="mt-8 grid gap-3">
+            <a
+              href={mailtoHref}
+              class="inline-flex cursor-pointer items-center justify-center rounded-sm bg-white px-5 py-3 text-sm font-semibold text-[#071923] transition-colors duration-200 hover:bg-[#f97316] hover:text-white"
+            >
+              Send e-post
+            </a>
+            <button
+              type="button"
+              data-copy={email}
+              class="inline-flex cursor-pointer items-center justify-center rounded-sm border border-white/22 bg-white/8 px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:border-[#a8fff2]/70 hover:bg-white/14"
+            >
+              Kopier {email}
+            </button>
+            <p class="min-h-5 text-xs text-[#a8fff2]" data-copy-feedback aria-live="polite"></p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="border-y border-[#d9e2e2] bg-[#f6f8f8]">
-      <div class="zimo-shell grid gap-8 py-12 md:grid-cols-3">
-        <div>
-          <p class="text-xs uppercase tracking-[0.22em] text-[#516066]">Bra pilotcase</p>
-          <p class="mt-2 text-lg font-semibold text-[#071923]">Et konkret undervannsproblem</p>
+    <section class="bg-white py-20">
+      <div class="zimo-shell">
+        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <p class="zimo-eyebrow">Første samtale</p>
+            <h2 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight text-[#071923] md:text-6xl">
+              Vi starter med behovet, ikke en salgspitch.
+            </h2>
+          </div>
+          <p class="max-w-2xl text-lg leading-relaxed text-[#516066] lg:justify-self-end">
+            En god pilotdialog handler om å forstå driftssituasjonen, hvem som
+            bruker bildet, og hva som må dokumenteres for at systemet skal gi
+            reell verdi.
+          </p>
         </div>
-        <div>
-          <p class="text-xs uppercase tracking-[0.22em] text-[#516066]">Første dialog</p>
-          <p class="mt-2 text-lg font-semibold text-[#071923]">Problem og brukssituasjon</p>
-        </div>
-        <div>
-          <p class="text-xs uppercase tracking-[0.22em] text-[#516066]">Neste steg</p>
-          <p class="mt-2 text-lg font-semibold text-[#071923]">Pilotomfang og teknisk fit</p>
+
+        <div class="mt-14 grid gap-px overflow-hidden rounded-sm border border-[#d9e2e2] bg-[#d9e2e2] md:grid-cols-3">
+          {steps.map((step) => (
+            <article class="bg-[#f8fbfb] p-7">
+              <p class="zimo-mono text-xs font-semibold text-[#0d776f]">{step.label}</p>
+              <h3 class="mt-8 text-2xl font-semibold text-[#071923]">{step.title}</h3>
+              <p class="mt-4 text-sm leading-relaxed text-[#516066]">{step.text}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
