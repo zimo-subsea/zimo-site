@@ -1,33 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --zimo-black: #05090b;
-  --zimo-abyss: #07131a;
+  --zimo-page: #ffffff;
+  --zimo-soft: #f6f8f8;
+  --zimo-cool: #eef5f5;
+  --zimo-ink: #0b1114;
+  --zimo-muted: #516066;
+  --zimo-border: #d9e2e2;
   --zimo-navy: #071923;
   --zimo-ocean: #0d2a35;
-  --zimo-surface: #12323d;
   --zimo-mint: #a8fff2;
-  --zimo-teal: #40d8c8;
-  --zimo-text: #f7f8f8;
+  --zimo-teal: #22b8aa;
+  --zimo-deep-teal: #0d776f;
 }
 
 @layer base {
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
-    background: var(--zimo-black);
+    background: var(--zimo-page);
   }
 
   body {
-    @apply min-h-screen bg-[#05090b] text-[#f7f8f8] antialiased;
+    @apply min-h-screen bg-white text-[#0b1114] antialiased;
     font-family:
       Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       sans-serif;
   }
 
   ::selection {
-    background: rgba(168, 255, 242, 0.26);
-    color: #ffffff;
+    background: rgba(34, 184, 170, 0.18);
+    color: #071923;
   }
 
   a,
@@ -37,7 +40,7 @@
 
   a:focus-visible,
   button:focus-visible {
-    @apply ring-2 ring-[#a8fff2]/70 ring-offset-2 ring-offset-[#05090b];
+    @apply ring-2 ring-[#22b8aa]/70 ring-offset-2 ring-offset-white;
   }
 }
 
@@ -47,14 +50,14 @@
   }
 
   .zimo-eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.28em] text-[#a8fff2]/80;
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-[#0d776f];
   }
 
   .zimo-panel {
-    @apply border border-white/10 bg-white/[0.045] backdrop-blur;
+    @apply border border-[#d9e2e2] bg-white shadow-[0_18px_60px_rgba(7,25,35,0.06)];
   }
 
   .zimo-muted {
-    @apply text-white/68;
+    @apply text-[#516066];
   }
 }
