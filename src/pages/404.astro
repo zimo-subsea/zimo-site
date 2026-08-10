@@ -3,36 +3,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
-
-<BaseLayout title="Zimo — Siden finnes ikke">
-  <Header />
-
-  <main id="main-content" class="bg-white text-[#0b1114]">
-    <section class="zimo-shell flex min-h-[70vh] flex-col justify-center py-20">
-      <p class="zimo-eyebrow">404</p>
-      <h1 class="mt-6 max-w-3xl text-5xl font-semibold tracking-tight text-[#071923] md:text-7xl">
-        Siden finnes ikke.
-      </h1>
-      <p class="mt-6 max-w-xl text-lg leading-relaxed text-[#516066]">
-        Lenken kan være gammel, eller siden kan ha flyttet seg mens vi bygger om
-        Zimo-nettsiden.
-      </p>
-      <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-        <a
-          href="/"
-          class="inline-flex items-center justify-center rounded-md bg-[#071923] px-6 py-3 text-sm font-semibold text-white"
-        >
-          Til forsiden
-        </a>
-        <a
-          href="/contact"
-          class="inline-flex items-center justify-center rounded-md border border-[#d9e2e2] bg-white px-6 py-3 text-sm font-semibold text-[#071923]"
-        >
-          Kontakt Zimo
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
-</BaseLayout>
+<BaseLayout title="ZiMO — Siden finnes ikke"><Header /><main id="main-content" class="bg-[#191919] text-[#f5f5f7]"><section class="zimo-shell flex min-h-[66vh] flex-col justify-center py-20"><p class="zimo-eyebrow">404</p><h1 class="mt-6 max-w-3xl text-5xl font-semibold leading-[1.02] md:text-6xl">Denne siden finnes ikke.</h1><p class="mt-6 max-w-xl text-lg leading-relaxed text-white/60">Lenken kan være gammel, eller innholdet kan ha flyttet seg mens ZiMO utvikler seg videre.</p><div class="mt-10 flex flex-col gap-3 sm:flex-row"><a href="/" class="inline-flex cursor-pointer items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#191919] transition-colors duration-200 hover:bg-[#d7d7d7]">Til forsiden</a><a href="/contact" class="inline-flex cursor-pointer items-center justify-center rounded-md border border-white/20 px-6 py-3 text-sm font-semibold">Kontakt ZiMO</a></div></section></main><Footer /></BaseLayout>

@@ -1,8 +1,8 @@
-# Zimo Site
+# ZiMO Site
 
 Astro site for `zimo.no`.
 
-The active direction is Norwegian-first, dark, maritime, technical, and focused on Zimo's underwater camera system.
+Norskspråklig nettside for et teknisk konsulent- og utviklingsmiljø. Siden presenterer tjenester innen elektronikk, embedded-systemer, mekanikk, prototyping og test.
 
 ## Local Development
 

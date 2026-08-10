@@ -1,0 +1,27 @@
+<!-- Source: DOGS2 v1 power board Gerber outputs, CERN-OHL-W-2.0. Rendered locally with tracespace. -->
+<figure class="overflow-hidden border border-white/12 bg-[#101310] p-4 sm:p-5" data-gerber-viewer data-layer="top">
+  <figcaption class="flex items-center justify-between gap-3">
+    <span class="zimo-mono text-[10px] text-white/42">DOGS2 / POWER BOARD / LAYER VIEWER</span>
+    <label class="sr-only" for="gerber-layer">Velg Gerber-lag</label>
+    <select id="gerber-layer" data-gerber-select class="zimo-mono cursor-pointer border border-white/16 bg-[#151715] px-2.5 py-1.5 text-[10px] text-[#d7a84a] outline-none transition-colors hover:border-[#d7a84a]/70 focus-visible:ring-2 focus-visible:ring-[#d7a84a]">
+      <option value="top">TOP COPPER</option>
+      <option value="inner">INNER 1</option>
+      <option value="bottom">BOTTOM COPPER</option>
+    </select>
+  </figcaption>
+  <div class="mt-4 overflow-hidden border border-[#79a878]/30 bg-[#101310] p-3 sm:p-5">
+    <div class="zimo-gerber-layer relative h-[240px] sm:h-[320px] lg:h-[360px]">
+      <img src="/gerber/dogs2-top-copper.svg" alt="Top copper-render av et faktisk power-board Gerber-lag" class="zimo-gerber-frame" data-layer-frame="top" loading="lazy" decoding="async" />
+      <img src="/gerber/dogs2-inner-copper.svg" alt="" class="zimo-gerber-frame" data-layer-frame="inner" loading="lazy" decoding="async" aria-hidden="true" />
+      <img src="/gerber/dogs2-bottom-copper.svg" alt="" class="zimo-gerber-frame" data-layer-frame="bottom" loading="lazy" decoding="async" aria-hidden="true" />
+    </div>
+  </div>
+</figure>
+
+<script is:inline>
+  document.querySelectorAll("[data-gerber-viewer]").forEach((viewer) => {
+    const select = viewer.querySelector("[data-gerber-select]");
+    if (!(select instanceof HTMLSelectElement)) return;
+    select.addEventListener("change", () => { viewer.dataset.layer = select.value; });
+  });
+</script>
