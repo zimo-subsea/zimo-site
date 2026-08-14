@@ -2,7 +2,7 @@
 
 Astro site for `zimo.no`.
 
-Norskspråklig nettside for et teknisk konsulent- og utviklingsmiljø. Siden presenterer tjenester innen elektronikk, embedded-systemer, mekanikk, prototyping og test.
+Norskspråklig nettside for en uavhengig fritidsvirksomhet. Siden presenterer avgrensede tjenester innen nettsider, små programvareverktøy, demonstratorer og teknisk formidling.
 
 ## Local Development
 

@@ -2,65 +2,58 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import GerberPreview from "../components/GerberPreview.astro";
-
 const capabilities = [
   {
     number: "01",
-    tag: "SYSTEM / 001",
-    title: "Systemdesign",
-    text: "Krav, grensesnitt og arkitektur som gjør at hardware, firmware og drift henger sammen fra første revisjon.",
-    details: ["Krav og risikobilde", "Grensesnitt og protokoller", "Tekniske veivalg"],
+    tag: "WEB / 001",
+    title: "Nettsider og små webverktøy",
+    text: "Oversiktlige nettsider, landingssider og enkle interne verktøy for små virksomheter og egne initiativer.",
+    details: ["Innhold og struktur", "Responsivt grensesnitt", "Enkel publisering"],
     color: "red",
     accent: "#d22828",
   },
   {
     number: "02",
-    tag: "HARDWARE / 002",
-    title: "Elektronikk og PCB",
-    text: "Kretsdesign og PCB-layout med blikk for strøm, signalintegritet, produksjon og bring-up av det ferdige kortet.",
-    details: ["Skjema og komponentvalg", "PCB-layout og dokumentasjon", "Bring-up og feilsøking"],
+    tag: "TOOLS / 002",
+    title: "Skript og automatisering",
+    text: "Små, avgrensede programmer som rydder data, forenkler gjentakende oppgaver eller gjør informasjon lettere å bruke.",
+    details: ["Python og kommandolinje", "Dataflyt og rapporter", "Dokumentert overlevering"],
     color: "green",
     accent: "#79a878",
   },
   {
     number: "03",
-    tag: "FIRMWARE / 003",
-    title: "Embedded og IoT",
-    text: "Robust firmware for STM32 og tilkoblede systemer, med fokus på kommunikasjon, sensorer og forutsigbar oppførsel.",
-    details: ["STM32 og firmware", "Sensorer og kommunikasjon", "IoT og systemintegrasjon"],
+    tag: "PROTOTYPE / 003",
+    title: "Idé og demonstrator",
+    text: "Raske demonstratorer som gjør en tidlig idé synlig og testbar, uten å love et produksjonsklart industrisystem.",
+    details: ["Klikkbare konsepter", "Enkle hobbyprototyper", "Læring før investering"],
     color: "amber",
     accent: "#d7a84a",
   },
   {
     number: "04",
-    tag: "VERIFY / 004",
-    title: "Test og verifikasjon",
-    text: "Testoppsett og målinger som avdekker usikkerhet tidlig og dokumenterer hvordan systemet faktisk oppfører seg.",
-    details: ["Testutstyr og automatisering", "Måling og analyse", "Feilsøking under reelle forhold"],
+    tag: "CLARITY / 004",
+    title: "Teknisk formidling",
+    text: "Klar dokumentasjon og visualisering som gjør et avgrenset digitalt prosjekt enklere å forstå, bruke og videreføre.",
+    details: ["Brukerveiledning", "Teknisk tekst", "Struktur og visualisering"],
     color: "red",
     accent: "#d22828",
   },
 ];
 
 const process = [
-  { number: "01", command: "DEFINE", text: "Avgrenser oppgaven, avhengighetene og det som må bevises." },
-  { number: "02", command: "DESIGN", text: "Gjør arkitektur, skjema og firmwarevalg konkrete og sporbare." },
-  { number: "03", command: "BUILD", text: "Bygger prototype, bringer opp kortet og kobler hele systemet sammen." },
-  { number: "04", command: "VERIFY", text: "Måler, feilsøker og lukker gapet mellom antakelse og faktisk resultat." },
+  { number: "01", command: "AVKLAR", text: "Sjekker formål, omfang og at oppdraget ligger innenfor ZiMOs tydelige rammer." },
+  { number: "02", command: "SKISSER", text: "Gjør innhold, brukerflyt og ønsket resultat konkret før arbeidet starter." },
+  { number: "03", command: "LAG", text: "Bygger en liten, forståelig løsning med vanlige og åpne verktøy." },
+  { number: "04", command: "LEVER", text: "Tester det avtalte omfanget og dokumenterer hvordan resultatet kan brukes videre." },
 ];
 
 const platforms = [
-  { name: "STM32", detail: "Microcontrollers", logo: "/technologies/stmicroelectronics.svg" },
-  { name: "ESP32", detail: "Connected devices", logo: "/technologies/espressif.svg" },
-  { name: "NVIDIA Jetson", detail: "Edge AI", logo: "/technologies/nvidia.svg" },
-  { name: "KiCad", detail: "Schematic + PCB", logo: "/technologies/kicad.svg" },
-  { name: "Python", detail: "Tools + automation", logo: "/technologies/python.svg" },
-  { name: "C / C++", detail: "Embedded software", logo: "/technologies/cplusplus.svg" },
+  "Astro", "TypeScript", "Python", "Git", "Linux", "Åpne standarder",
 ];
 ---
 
-<BaseLayout title="ZiMO - Elektronikk og embedded" description="ZiMO er et selvstendig engineering studio for elektronikk, PCB, embedded-systemer og teknisk verifikasjon.">
+<BaseLayout title="ZiMO - Små digitale prosjekter" description="ZiMO lager avgrensede nettsider, webverktøy, skript og demonstratorer som en uavhengig fritidsvirksomhet.">
   <Header />
   <main id="main-content" class="bg-[#191919] text-[#f5f5f7]">
     <section class="relative overflow-hidden border-b border-white/10">
@@ -68,12 +61,12 @@ const platforms = [
       <div class="absolute inset-y-0 right-0 hidden w-[45%] border-l border-white/10 lg:block" aria-hidden="true"></div>
       <div class="zimo-shell relative grid min-h-[620px] gap-10 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-20">
         <div class="max-w-3xl">
-          <p class="zimo-eyebrow">ELEKTRONIKK / EMBEDDED / SYSTEMDESIGN</p>
-          <h1 class="mt-7 max-w-3xl text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-5xl xl:text-[4.25rem]">Elektronikk og embedded.<br /><span class="text-white/74">Fra spesifikasjon til verifisert system.</span></h1>
-          <p class="mt-7 max-w-xl text-lg leading-relaxed text-white/60">Vi starter med problemet: hva som skal fungere, hvilke rammer som betyr noe og hva som fortsatt er usikkert. Derfra finner vi sammen en fornuftig teknisk vei videre.</p>
+          <p class="zimo-eyebrow">WEB / VERKTØY / EGNE IDÉER</p>
+          <h1 class="mt-7 max-w-3xl text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-5xl xl:text-[4.25rem]">Små digitale prosjekter.<br /><span class="text-white/74">Tydelig avgrenset fra ordinært arbeidsliv.</span></h1>
+          <p class="mt-7 max-w-xl text-lg leading-relaxed text-white/60">ZiMO er en uavhengig fritidsvirksomhet for nettsider, enkle programvareverktøy og egne demonstratorer. Oppdrag velges med omtanke og bygges kun med egne ressurser og allment tilgjengelig kunnskap.</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#kontakt" class="inline-flex cursor-pointer items-center justify-center rounded-md bg-white px-6 py-3.5 text-sm font-semibold text-[#191919] transition-colors duration-200 hover:bg-[#dedede]">Start en teknisk samtale</a>
-            <a href="#fagomrader" class="inline-flex cursor-pointer items-center justify-center rounded-md border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:border-white hover:bg-white/8">Se fagområder</a>
+            <a href="#kontakt" class="inline-flex cursor-pointer items-center justify-center rounded-md bg-white px-6 py-3.5 text-sm font-semibold text-[#191919] transition-colors duration-200 hover:bg-[#dedede]">Beskriv et lite prosjekt</a>
+            <a href="#avgrensning" class="inline-flex cursor-pointer items-center justify-center rounded-md border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:border-white hover:bg-white/8">Les om avgrensningen</a>
           </div>
         </div>
 
@@ -81,20 +74,20 @@ const platforms = [
           <div class="zimo-grid absolute inset-0 opacity-35" aria-hidden="true"></div>
           <div class="relative">
             <div class="flex items-center justify-between gap-4 border-b border-white/12 pb-5">
-              <p class="zimo-mono text-[11px] uppercase tracking-[0.12em] text-white/50">zimo.engineering / system-map</p>
+              <p class="zimo-mono text-[11px] uppercase tracking-[0.12em] text-white/50">zimo.studio / project-scope</p>
               <span class="zimo-mono flex items-center gap-2 text-[10px] text-white/48"><span class="zimo-signal h-2 w-2 rounded-full bg-[#d22828]"></span>ONLINE</span>
             </div>
             <div class="zimo-mono mt-7 grid gap-4 text-sm leading-6 text-white/74">
-              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#d22828]">01</span><span>SYSTEM DEFINITION</span><span class="h-2 w-2 rounded-full bg-[#d22828]"></span></div>
-              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#79a878]">02</span><span>PCB + HARDWARE DESIGN</span><span class="h-2 w-2 rounded-full bg-[#79a878]"></span></div>
-              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#d7a84a]">03</span><span>EMBEDDED FIRMWARE</span><span class="h-2 w-2 rounded-full bg-[#d7a84a]"></span></div>
-              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#d22828]">04</span><span>TEST + VERIFICATION</span><span class="h-2 w-2 rounded-full bg-[#d22828]"></span></div>
+              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#d22828]">01</span><span>INDEPENDENT PROJECT</span><span class="h-2 w-2 rounded-full bg-[#d22828]"></span></div>
+              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#79a878]">02</span><span>PUBLIC KNOWLEDGE ONLY</span><span class="h-2 w-2 rounded-full bg-[#79a878]"></span></div>
+              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#d7a84a]">03</span><span>OWN TIME + EQUIPMENT</span><span class="h-2 w-2 rounded-full bg-[#d7a84a]"></span></div>
+              <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3"><span class="text-[#d22828]">04</span><span>CONFLICT CHECKED</span><span class="h-2 w-2 rounded-full bg-[#d22828]"></span></div>
             </div>
             <div class="mt-8 grid grid-cols-2 gap-px border border-white/12 bg-white/12 text-xs sm:grid-cols-4">
-              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">MCU</p><p class="mt-2 font-medium text-white/80">STM32</p></div>
-              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">PCB</p><p class="mt-2 font-medium text-white/80">REV A+</p></div>
-              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">TEST</p><p class="mt-2 font-medium text-white/80">TRACE</p></div>
-              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">LINK</p><p class="mt-2 font-medium text-white/80">IOT</p></div>
+              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">SCOPE</p><p class="mt-2 font-medium text-white/80">SMALL</p></div>
+              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">TOOLS</p><p class="mt-2 font-medium text-white/80">OPEN</p></div>
+              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">ASSETS</p><p class="mt-2 font-medium text-white/80">OWN</p></div>
+              <div class="bg-[#191919] p-3"><p class="zimo-mono text-[10px] text-white/38">STATUS</p><p class="mt-2 font-medium text-white/80">CLEAR</p></div>
             </div>
             <div class="mt-7 flex items-center justify-between border-t border-white/12 pt-5 zimo-mono text-[11px] text-white/46"><span>STATUS: READY FOR REVIEW</span><span class="text-[#d22828]">0x01</span></div>
           </div>
@@ -102,13 +95,25 @@ const platforms = [
       </div>
     </section>
 
+    <section id="avgrensning" class="border-b border-white/10 bg-[#151515] py-20 lg:py-24">
+      <div class="zimo-shell grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+        <div><p class="zimo-eyebrow">Uavhengighet / tydelige grenser</p><h2 class="mt-5 max-w-lg text-4xl font-semibold leading-[1.07] md:text-5xl">Ingen sammenblanding med arbeidsgiver.</h2></div>
+        <div class="grid gap-px border border-white/12 bg-white/12 sm:grid-cols-2">
+          <article class="bg-[#191919] p-7"><p class="zimo-mono text-[11px] text-[#79a878]">01 / EGET</p><h3 class="mt-5 text-xl font-semibold">Egen tid og egne ressurser</h3><p class="mt-3 text-sm leading-relaxed text-white/56">Alt arbeid utføres utenfor arbeidstid, på eget utstyr og med ZiMOs egne lisenser og kontoer.</p></article>
+          <article class="bg-[#191919] p-7"><p class="zimo-mono text-[11px] text-[#79a878]">02 / ÅPENT</p><h3 class="mt-5 text-xl font-semibold">Ingen konfidensiell kunnskap</h3><p class="mt-3 text-sm leading-relaxed text-white/56">Løsningene baseres på offentlig dokumentasjon, åpne standarder og generell fagkunnskap. Forretningshemmeligheter og internt materiale brukes aldri.</p></article>
+          <article class="bg-[#191919] p-7"><p class="zimo-mono text-[11px] text-[#d7a84a]">03 / AVGRENSNING</p><h3 class="mt-5 text-xl font-semibold">Ikke industrielle kjernesystemer</h3><p class="mt-3 text-sm leading-relaxed text-white/56">ZiMO tilbyr ikke utvikling av sikkerhetskritiske, maritime, offshore- eller industrielle elektriske systemer.</p></article>
+          <article class="bg-[#191919] p-7"><p class="zimo-mono text-[11px] text-[#d22828]">04 / KONTROLL</p><h3 class="mt-5 text-xl font-semibold">Oppdrag vurderes på forhånd</h3><p class="mt-3 text-sm leading-relaxed text-white/56">Forespørsler som kan overlappe med arbeidsforhold, konkurransehensyn eller taushetsplikt blir avvist.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section id="samarbeid" class="border-b border-white/10 bg-[#202020] py-20 lg:py-28">
       <div class="zimo-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div><p class="zimo-eyebrow">Samarbeid / før første revisjon</p><h2 class="mt-5 max-w-xl text-4xl font-semibold leading-[1.07] md:text-5xl">Riktig løsning begynner med en god samtale.</h2><p class="mt-6 max-w-lg text-lg leading-relaxed text-white/58">Noen ganger er behovet tydelig. Andre ganger er problemet fortsatt litt uformet. Begge deler er et godt utgangspunkt. Vi går gjennom kontekst, begrensninger og muligheter før det blir bestemt hva som bør bygges.</p></div>
+        <div><p class="zimo-eyebrow">Samarbeid / før oppstart</p><h2 class="mt-5 max-w-xl text-4xl font-semibold leading-[1.07] md:text-5xl">Et lite prosjekt begynner med en tydelig ramme.</h2><p class="mt-6 max-w-lg text-lg leading-relaxed text-white/58">Først avklarer vi hva som ønskes, om ZiMO er riktig sted, og om prosjektet er klart adskilt fra andre arbeidsforhold. Deretter avtaler vi et lite og konkret resultat.</p></div>
         <div class="grid gap-px border border-white/12 bg-white/12 sm:grid-cols-3">
-          <div class="bg-[#202020] p-6"><p class="zimo-mono text-[10px] text-[#d22828]">01 / CONTEXT</p><p class="mt-5 text-base font-medium">Hva skjer i systemet rundt?</p></div>
-          <div class="bg-[#202020] p-6"><p class="zimo-mono text-[10px] text-[#79a878]">02 / CONSTRAINTS</p><p class="mt-5 text-base font-medium">Hva må fungere, tåle og passe?</p></div>
-          <div class="bg-[#202020] p-6"><p class="zimo-mono text-[10px] text-[#d7a84a]">03 / NEXT STEP</p><p class="mt-5 text-base font-medium">Hva er klokest å undersøke først?</p></div>
+          <div class="bg-[#202020] p-6"><p class="zimo-mono text-[10px] text-[#d22828]">01 / FIT</p><p class="mt-5 text-base font-medium">Passer oppgaven innenfor rammene?</p></div>
+          <div class="bg-[#202020] p-6"><p class="zimo-mono text-[10px] text-[#79a878]">02 / SCOPE</p><p class="mt-5 text-base font-medium">Hva er den minste nyttige leveransen?</p></div>
+          <div class="bg-[#202020] p-6"><p class="zimo-mono text-[10px] text-[#d7a84a]">03 / RESULT</p><p class="mt-5 text-base font-medium">Hvordan vet vi at den er ferdig?</p></div>
         </div>
       </div>
     </section>
@@ -117,8 +122,8 @@ const platforms = [
       <div class="zimo-circuit-grid absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="zimo-shell relative">
         <div class="grid gap-10 border-b border-white/14 pb-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div><p class="zimo-eyebrow">Fagområder / 04 moduler</p><h2 class="mt-5 max-w-xl text-4xl font-semibold leading-[1.07] md:text-5xl">Teknisk dybde der systemet er mest sårbart.</h2></div>
-          <p class="max-w-xl text-lg leading-relaxed text-white/56 lg:justify-self-end">Arbeidet starter med det som må fungere, ikke med en forhåndsbestemt leveranse. ZiMO kan ta ansvar for en konkret del av systemet eller følge opp helheten gjennom utviklingsløpet.</p>
+          <div><p class="zimo-eyebrow">Tjenester / 04 områder</p><h2 class="mt-5 max-w-xl text-4xl font-semibold leading-[1.07] md:text-5xl">Praktisk hjelp til små, digitale behov.</h2></div>
+          <p class="max-w-xl text-lg leading-relaxed text-white/56 lg:justify-self-end">ZiMO tar avgrensede oppdrag der nettsider, enkel programvare eller formidling er selve leveransen. Ambisjonen er noe nyttig og forståelig – ikke å overta ansvar for kundens tekniske kjernesystemer.</p>
         </div>
         <div class="mt-12 grid gap-px border border-white/12 bg-white/12 md:grid-cols-2">
           {capabilities.map((item) => <article class="group relative min-h-[280px] overflow-hidden bg-[#191919] p-7 sm:p-8">
@@ -131,18 +136,14 @@ const platforms = [
             </div>
           </article>)}
         </div>
-        <div class="mt-12 grid gap-10 border-t border-white/14 pt-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
-          <div><p class="zimo-eyebrow">PCB / produksjonsgrunnlag</p><h3 class="mt-5 text-3xl font-semibold leading-[1.12]">Tydelig layout før kortet går til produksjon.</h3><p class="mt-5 max-w-md text-base leading-relaxed text-white/56">Velg lag i vieweren for å lese samme layout fra ulike sider. Et ryddig produksjonsgrunnlag gjør det enklere å verifisere, bygge og revidere videre.</p><ul class="zimo-mono mt-7 grid gap-2 text-[11px] text-white/48"><li><span class="mr-2 text-[#d7a84a]">+</span>GERBER + DRILL</li><li><span class="mr-2 text-[#79a878]">+</span>BOM + PICK AND PLACE</li><li><span class="mr-2 text-[#d22828]">+</span>REVISJONSNOTER + TESTPLAN</li></ul></div>
-          <GerberPreview />
-        </div>
       </div>
     </section>
 
     <section id="plattformer" class="border-y border-white/10 bg-[#151515] py-14 lg:py-16">
       <div class="zimo-shell">
-        <p class="zimo-eyebrow">Platforms / technologies</p>
+        <p class="zimo-eyebrow">Vanlige / tilgjengelige verktøy</p>
         <ul class="mt-7 flex flex-wrap items-center justify-between gap-x-8 gap-y-7 border-y border-white/12 py-8 sm:gap-x-12 lg:flex-nowrap lg:gap-x-0 lg:py-10">
-          {platforms.map((platform) => <li class="flex h-10 min-w-12 items-center justify-center"><img src={platform.logo} alt={platform.name} class="h-8 max-w-[7rem] object-contain brightness-0 invert opacity-70 transition-opacity duration-200 hover:opacity-100" loading="lazy" decoding="async" /></li>)}
+          {platforms.map((platform) => <li class="zimo-mono flex h-10 min-w-12 items-center justify-center text-xs uppercase tracking-[0.1em] text-white/62">{platform}</li>)}
         </ul>
       </div>
     </section>
@@ -150,21 +151,21 @@ const platforms = [
     <section id="metode" class="border-y border-white/10 bg-[#202020] py-24 lg:py-32">
       <div class="zimo-shell">
         <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div><p class="zimo-eyebrow">Metode / engineering loop</p><h2 class="mt-5 max-w-xl text-4xl font-semibold leading-[1.07] md:text-5xl">Beslutninger som tåler en måling.</h2></div>
-          <p class="max-w-xl text-lg leading-relaxed text-white/56 lg:justify-self-end">Hver fase skal redusere risiko. Ikke produsere dokumenter for dokumentenes skyld. Det betyr korte løkker mellom plan, prototype og reelle måledata.</p>
+          <div><p class="zimo-eyebrow">Metode / liten og ryddig</p><h2 class="mt-5 max-w-xl text-4xl font-semibold leading-[1.07] md:text-5xl">Avklart før det blir bygget.</h2></div>
+          <p class="max-w-xl text-lg leading-relaxed text-white/56 lg:justify-self-end">Hvert prosjekt skal ha et forståelig formål, et begrenset omfang og en tydelig avslutning. Første steg er alltid å kontrollere at oppgaven passer virksomhetens rammer.</p>
         </div>
         <ol class="mt-14 grid gap-px border border-white/12 bg-white/12 lg:grid-cols-4">
           {process.map((step, index) => <li class="relative min-h-[230px] bg-[#202020] p-7"><p class="zimo-mono text-xs text-white/44">{step.number}</p><p class="zimo-mono mt-10 text-sm text-white/84">{step.command}</p><p class="mt-4 text-sm leading-relaxed text-white/56">{step.text}</p>{index < process.length - 1 && <span class="absolute right-0 top-1/2 hidden h-px w-5 translate-x-1/2 bg-[#d22828] lg:block" aria-hidden="true"></span>}</li>)}
         </ol>
-        <div class="zimo-mono mt-8 flex flex-wrap gap-x-7 gap-y-3 text-[11px] text-white/42"><span><span class="text-[#d22828]">[01]</span> BEVIS USIKKERHET TIDLIG</span><span><span class="text-[#79a878]">[02]</span> DOKUMENTER VALGENE</span><span><span class="text-[#d7a84a]">[03]</span> TEST MOT VIRKELIGHETEN</span></div>
+        <div class="zimo-mono mt-8 flex flex-wrap gap-x-7 gap-y-3 text-[11px] text-white/42"><span><span class="text-[#d22828]">[01]</span> SJEKK GRENSENE FØRST</span><span><span class="text-[#79a878]">[02]</span> BRUK EGNE RESSURSER</span><span><span class="text-[#d7a84a]">[03]</span> LEVER DET AVTALTE</span></div>
       </div>
     </section>
 
     <section id="kontakt" class="relative overflow-hidden bg-[#111111] py-24 lg:py-32">
       <div class="zimo-circuit-grid absolute inset-0 opacity-35" aria-hidden="true"></div>
       <div class="zimo-shell relative grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div><p class="zimo-eyebrow">Kontakt / startpunkt</p><h2 class="mt-5 max-w-2xl text-4xl font-semibold leading-[1.07] md:text-5xl">Har dere en utfordring det er verdt å tenke ordentlig på?</h2><p class="mt-6 max-w-xl text-lg leading-relaxed text-white/58">Send et par linjer om situasjonen. En første prat kan være nok til å se hva som bør undersøkes videre, og hva som ikke trenger å bli mer komplisert enn det er.</p><a href="mailto:mads.falk@zimo.no" class="mt-8 inline-flex cursor-pointer items-center justify-center rounded-md bg-white px-6 py-3.5 text-sm font-semibold text-[#191919] transition-colors duration-200 hover:bg-[#dedede]">Start en teknisk samtale</a></div>
-        <div class="border border-white/14 bg-[#161616] p-2 sm:p-3"><div class="zimo-terminal-panel border border-white/10 bg-[#111111] p-5 sm:p-6"><div class="flex items-center justify-between border-b border-white/10 pb-4"><div class="flex items-center gap-3"><span class="flex gap-1" aria-hidden="true"><i class="h-1.5 w-1.5 rounded-full bg-[#d22828]"></i><i class="h-1.5 w-1.5 rounded-full bg-[#d7a84a]"></i><i class="h-1.5 w-1.5 rounded-full bg-[#79a878]"></i></span><p class="zimo-mono text-[10px] text-white/44">zimo@terminal:~/main.c</p></div><span class="zimo-mono text-[10px] text-[#79a878]">C11 / SOURCE</span></div><div class="relative mt-5"><pre class="zimo-terminal-output m-0 h-[22rem] overflow-hidden whitespace-pre-wrap break-words text-sm leading-7 text-white/72 sm:pr-14" aria-live="polite"><code data-zimo-terminal></code></pre><div class="zimo-code-minimap hidden sm:block" data-terminal-minimap aria-hidden="true"></div></div><div class="zimo-terminal-status mt-2 flex items-center justify-between gap-3 border-t border-white/10 pt-4" data-terminal-status data-state="waiting"><span class="flex items-center gap-2"><i class="zimo-terminal-status-dot" aria-hidden="true"></i><span class="zimo-mono text-[10px] text-white/46" data-terminal-status-text>AWAITING CONTEXT</span></span><span class="zimo-mono text-[10px] text-white/28">main.c</span></div><a href="mailto:mads.falk@zimo.no" class="mt-5 inline-flex cursor-pointer items-center justify-center rounded-md border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:border-white hover:bg-white/8">Send en kort beskrivelse</a><p class="zimo-mono mt-6 border-t border-white/10 pt-4 text-[10px] text-white/38">ENGINEERED IN NORWAY / REMOTE + ON-SITE / PROJECT BASED</p></div></div>
+        <div><p class="zimo-eyebrow">Kontakt / startpunkt</p><h2 class="mt-5 max-w-2xl text-4xl font-semibold leading-[1.07] md:text-5xl">Har dere et lite digitalt behov med en tydelig slutt?</h2><p class="mt-6 max-w-xl text-lg leading-relaxed text-white/58">Send et par linjer om ønsket resultat og bruksområdet. Alle forespørsler vurderes først mot ZiMOs avgrensning; oppdrag med mulig interessekonflikt eller overlapp blir ikke tatt videre.</p><a href="mailto:mads.falk@zimo.no" class="mt-8 inline-flex cursor-pointer items-center justify-center rounded-md bg-white px-6 py-3.5 text-sm font-semibold text-[#191919] transition-colors duration-200 hover:bg-[#dedede]">Beskriv prosjektet kort</a></div>
+        <div class="border border-white/14 bg-[#161616] p-2 sm:p-3"><div class="zimo-terminal-panel border border-white/10 bg-[#111111] p-5 sm:p-6"><div class="flex items-center justify-between border-b border-white/10 pb-4"><div class="flex items-center gap-3"><span class="flex gap-1" aria-hidden="true"><i class="h-1.5 w-1.5 rounded-full bg-[#d22828]"></i><i class="h-1.5 w-1.5 rounded-full bg-[#d7a84a]"></i><i class="h-1.5 w-1.5 rounded-full bg-[#79a878]"></i></span><p class="zimo-mono text-[10px] text-white/44">zimo@terminal:~/main.c</p></div><span class="zimo-mono text-[10px] text-[#79a878]">C11 / SOURCE</span></div><div class="relative mt-5"><pre class="zimo-terminal-output m-0 h-[22rem] overflow-hidden whitespace-pre-wrap break-words text-sm leading-7 text-white/72 sm:pr-14" aria-live="polite"><code data-zimo-terminal></code></pre><div class="zimo-code-minimap hidden sm:block" data-terminal-minimap aria-hidden="true"></div></div><div class="zimo-terminal-status mt-2 flex items-center justify-between gap-3 border-t border-white/10 pt-4" data-terminal-status data-state="waiting"><span class="flex items-center gap-2"><i class="zimo-terminal-status-dot" aria-hidden="true"></i><span class="zimo-mono text-[10px] text-white/46" data-terminal-status-text>AWAITING CONTEXT</span></span><span class="zimo-mono text-[10px] text-white/28">main.c</span></div><a href="mailto:mads.falk@zimo.no" class="mt-5 inline-flex cursor-pointer items-center justify-center rounded-md border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:border-white hover:bg-white/8">Send en kort beskrivelse</a><p class="zimo-mono mt-6 border-t border-white/10 pt-4 text-[10px] text-white/38">CREATED IN NORWAY / OWN TIME + EQUIPMENT / PROJECT BASED</p></div></div>
       </div>
     </section>
   </main>
