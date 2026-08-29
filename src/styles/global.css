@@ -1,56 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
 @layer base {
-  html { color-scheme: dark; scroll-behavior: smooth; background: #191919; }
-  body { @apply min-h-screen bg-[#191919] text-[#f5f5f7] antialiased; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif; }
-  ::selection { background: #d7d7d7; color: #191919; }
+  html { scroll-behavior: smooth; background: #f5f6f7; }
+  body { @apply min-h-screen bg-[#f5f6f7] text-[#20272a] antialiased; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif; }
+  ::selection { background: #d9f05a; color: #20272a; }
   a, button { @apply outline-none; }
-  a:focus-visible, button:focus-visible { @apply ring-2 ring-white ring-offset-2 ring-offset-[#191919]; }
+  a:focus-visible, button:focus-visible { @apply ring-2 ring-[#20272a] ring-offset-2 ring-offset-white; }
 }
 
 @layer utilities {
   .zimo-shell { @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10; }
-  .zimo-eyebrow { @apply text-[11px] font-medium uppercase tracking-[0.12em] text-[#a6adb4]; font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
-  .zimo-mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
-  .zimo-skip-link { @apply fixed left-4 top-4 z-[100] -translate-y-24 bg-[#f5f5f7] px-4 py-3 text-sm font-semibold text-[#1d1d1f] transition-transform duration-200 focus:translate-y-0; }
-  .zimo-grid { background-image: linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 34px 34px; }
-  .zimo-circuit-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 1.25px), linear-gradient(90deg, transparent 0 24px, rgba(255,255,255,0.04) 24px 25px, transparent 25px), linear-gradient(transparent 0 24px, rgba(255,255,255,0.04) 24px 25px, transparent 25px); background-size: 48px 48px; }
-  .zimo-node { @apply inline-flex h-7 min-w-7 items-center justify-center border px-1 text-[10px]; font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
-  .zimo-node-red { @apply border-[#d22828]/50 text-[#d22828]; }
-  .zimo-node-green { @apply border-[#79a878]/50 text-[#79a878]; }
-  .zimo-node-amber { @apply border-[#d7a84a]/50 text-[#d7a84a]; }
-  .zimo-trace { @apply absolute right-0 top-0 h-px w-1/2 opacity-80 transition-all duration-500 group-hover:w-full; }
-  .zimo-trace-red { @apply bg-[#d22828]; }
-  .zimo-trace-green { @apply bg-[#79a878]; }
-  .zimo-trace-amber { @apply bg-[#d7a84a]; }
-  .zimo-signal { animation: zimo-signal 2.8s ease-in-out infinite; }
-  .zimo-gerber-frame { @apply absolute inset-0 h-full w-full object-contain opacity-0 transition-[opacity,transform] duration-300; }
-  [data-gerber-viewer][data-layer="top"] [data-layer-frame="top"], [data-gerber-viewer][data-layer="inner"] [data-layer-frame="inner"], [data-gerber-viewer][data-layer="bottom"] [data-layer-frame="bottom"] { @apply opacity-100; }
-  [data-gerber-viewer][data-layer="inner"] [data-layer-frame="inner"] { @apply translate-y-0; }
-  .zimo-terminal-panel { background-image: linear-gradient(90deg, rgba(210,40,40,0.08) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 100% 28px, 28px 28px; }
-  .zimo-terminal-output { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; counter-reset: source-line; }
-  .zimo-code-line { position: relative; display: block; min-height: 1.75rem; padding-left: 3rem; }
-  .zimo-code-line::before { position: absolute; left: 0; width: 1.75rem; color: rgba(255,255,255,0.22); content: attr(data-line); text-align: right; }
-  .zimo-code-cursor { display: inline-block; width: 0.52em; height: 1.1em; margin-left: 0.08em; vertical-align: -0.17em; background: #d22828; animation: zimo-cursor 1s steps(2, start) infinite; }
-  .zimo-code-minimap { position: absolute; top: 0.35rem; right: 0; width: 2.2rem; padding-left: 0.55rem; border-left: 1px solid rgba(255,255,255,0.08); }
-  .zimo-code-minimap-line { display: block; width: max(2px, var(--minimap-width)); height: 2px; margin-bottom: 1.625rem; background: rgba(255,255,255,0.24); opacity: 0; transition: width 100ms linear, opacity 160ms ease; }
-  .zimo-code-minimap-line.is-visible { opacity: 0.8; }
-  .zimo-code-minimap-amber { background: #d7a84a; }
-  .zimo-code-minimap-green { background: #79a878; }
-  .zimo-code-minimap-red { background: #d47b74; }
-  .zimo-terminal-status-dot { display: inline-block; height: 0.42rem; width: 0.42rem; border-radius: 9999px; background: #727872; }
-  [data-terminal-status][data-state="building"] .zimo-terminal-status-dot { background: #d7a84a; animation: zimo-terminal-pulse 1.3s ease-in-out infinite; }
-  [data-terminal-status][data-state="ready"] .zimo-terminal-status-dot { background: #79a878; box-shadow: 0 0 12px rgba(121,168,120,0.45); }
-  .zimo-code-preprocessor { color: #d7a84a; }
-  .zimo-code-keyword { color: #d47b74; }
-  .zimo-code-literal { color: #d7a84a; }
-  .zimo-code-function { color: #e7e7e1; }
-  .zimo-code-string { color: #79a878; }
-  .zimo-code-comment { color: #727872; }
+  .zimo-eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6b7a7f]; }
+  .zimo-skip-link { @apply fixed left-4 top-4 z-[100] -translate-y-24 bg-[#d9f05a] px-4 py-3 text-sm font-semibold text-[#20272a] transition-transform duration-200 focus:translate-y-0; }
 }
-
-@keyframes zimo-signal { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
-@keyframes zimo-cursor { 50% { opacity: 0; } }
-@keyframes zimo-terminal-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(215,168,74,0.34); } 50% { box-shadow: 0 0 0 5px rgba(215,168,74,0); } }
-@media (prefers-reduced-motion: reduce) { .zimo-signal, .zimo-code-cursor, [data-terminal-status][data-state="building"] .zimo-terminal-status-dot { animation: none; } }

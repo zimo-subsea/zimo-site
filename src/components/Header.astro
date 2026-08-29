@@ -1,11 +1,9 @@
 ---
 const nav = [
-  { label: "Plattform", href: "/#plattform" },
+  { label: "Slik fungerer det", href: "/#plattform" },
   { label: "Bruksområder", href: "/#bruksomrader" },
-  { label: "Dashboard", href: "/#dashboard" },
-  { label: "Gateway", href: "/#gateway" },
-  { label: "Modell", href: "/#modell" },
-  { label: "Rammer", href: "/#avgrensning" },
+  { label: "Automasjon", href: "/#automasjon" },
+  { label: "Kom i gang", href: "/#pilot" },
 ];
 ---
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#191919]/88 text-white backdrop-blur-xl"><div class="zimo-shell flex h-[4.5rem] items-center justify-between"><a href="/" class="flex" aria-label="ZiMO hjem"><img src="/brand/ZiMO_full_white.svg" alt="" class="h-7 w-auto" loading="eager" decoding="async" /></a><nav class="hidden items-center gap-7 text-[13px] font-medium text-white/62 md:flex">{nav.map((item) => <a href={item.href} class="cursor-pointer transition-colors duration-200 hover:text-white">{item.label}</a>)}</nav><a href="/#kontakt" class="hidden cursor-pointer rounded-md bg-white px-4 py-2 text-[13px] font-semibold text-[#191919] transition-colors duration-200 hover:bg-[#d7d7d7] md:inline-flex">Kontakt</a><button class="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-white/16 text-white transition-colors duration-200 hover:bg-white/8 md:hidden" type="button" aria-label="Åpne meny" aria-expanded="false" data-mobile-toggle><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></svg></button></div><div class="zimo-shell hidden pb-4 md:hidden" data-mobile-menu data-open="false"><nav class="grid rounded-lg border border-white/10 bg-[#252525] p-2 text-sm text-white"><a href="/" class="rounded-md px-3 py-3 font-medium">Hovedside</a>{nav.map((item) => <a href={item.href} class="rounded-md px-3 py-3 font-medium text-white/68 transition-colors duration-200 hover:bg-white/8 hover:text-white">{item.label}</a>)}<a href="/#kontakt" class="rounded-md px-3 py-3 font-semibold text-white">Kontakt</a></nav></div><script is:inline>(() => { const toggle = document.querySelector("[data-mobile-toggle]"); const menu = document.querySelector("[data-mobile-menu]"); if (!toggle || !menu) return; const setOpen = (open) => { menu.dataset.open = open ? "true" : "false"; toggle.setAttribute("aria-expanded", open ? "true" : "false"); menu.classList.toggle("hidden", !open); }; setOpen(false); toggle.addEventListener("click", () => setOpen(menu.dataset.open !== "true")); document.addEventListener("click", (event) => { if (event.target instanceof Element && !event.target.closest("[data-mobile-menu]") && !event.target.closest("[data-mobile-toggle]")) setOpen(false); }); })();</script></header>
