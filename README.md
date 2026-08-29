@@ -2,7 +2,7 @@
 
 Astro site for `zimo.no`.
 
-Norskspråklig nettside for en uavhengig fritidsvirksomhet. Siden presenterer avgrensede tjenester innen nettsider, små programvareverktøy, demonstratorer og teknisk formidling.
+Norskspråklig nettside for SitePulse, ZiMOs IoT-plattform for byggeplassovervåkning, varsler, historikk og enkel automasjon. Siden presenterer konsept, kundeverdi, bruksområder, gateway, forretningsmodell og tydelige rammer for uavhengig utvikling.
 
 ## Local Development
 
