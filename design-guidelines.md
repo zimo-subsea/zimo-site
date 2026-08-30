@@ -372,3 +372,12 @@ Design og QA skal vurderes ved minst 375, 768, 1024 og 1440 px.
 | 2026-08-30 | Grafer er primær forklaring av status, kostnad og automasjon. | Produktet handler om målinger over tid; grafer gir mer troverdig forklaring enn dekorative dashboard-kort. |
 | 2026-08-30 | Status og regler skal bruke høy-kontrast tekst, små markører og borders, ikke pastellfargede pills eller store fargeflater. | Pastellflater og avrundede chips ga et generisk, AI-generert SaaS-uttrykk. |
 | 2026-08-30 | Unngå glow, blur, overdreven dekorativ grid og flytende mockup-lag. | Et flatere og mer redaksjonelt uttrykk føles mer industrielt, konkret og menneskelig. |
+
+
+## Avklaring etter hero-feedback
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | Navigasjonsheaderen med ZiMO-logo og SitePulse-label beholdes uendret. | Tilbakemeldingen gjaldt hero-/produktblokken under headeren, ikke navigasjonen. |
+| 2026-08-30 | Heroen skal kombinere ekte byggeplassfoto med en mørk produktflate og en tydelig temperaturgraf. | Fotoet gir kontekst, mens grafen forklarer måling, terskel og automatisk handling mer konkret enn dekorative UI-elementer. |
+| 2026-08-30 | Pastellfargede statuschips og myke dashboardkort skal ikke brukes i heroen. | Heroen skal føles som et nøkternt industrielt kontrollsystem, ikke en generisk AI-generert SaaS-demo. |
