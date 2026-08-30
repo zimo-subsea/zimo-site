@@ -429,3 +429,16 @@ Denne avklaringen overstyrer tidligere regler om fotodrevet hero og detaljert ga
 | 2026-08-30 | Systemforklaringen holdes enkel: måleenheter → gateway → LTE → SitePulse Cloud. | LTE er relevant; detaljer om lokal kommunikasjon er sekundære på salgssiden. |
 | 2026-08-30 | Vannmåling skal ikke vises som tilgjengelig funksjon. | Produktet støtter foreløpig temperatur og luftfuktighet, ikke vann. |
 | 2026-08-30 | Enhetene beskrives som permanent eid, med lagring hos ZiMO mellom prosjekter og gjenbruk uten ny enhetskostnad. | Forklarer den faktiske kommersielle modellen mer presist. |
+
+
+## Gjeldende hero – Cloud som produktbevis
+
+Denne retningen overstyrer den typografiske, sentrerte heroen.
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | Heroen bruker venstrejustert salgstekst og en SitePulse Cloud-visning til høyre. | Besøkende får både et tydelig budskap og et konkret bilde av produktet i samme skjerm. |
+| 2026-08-30 | Cloud-eksempelet viser gateway-/områdedetaljen «Bygg A · Etasje 3». | Gjør produktet lettere å forstå enn et generelt dashboard. |
+| 2026-08-30 | Førstevisningen prioriterer temperatur, varme på automatisk, LTE-status, brukt energi og estimert spart energi. | Viser hvordan måling, styring og økonomisk innsikt henger sammen. |
+| 2026-08-30 | Cloud-flaten bruker sammenhengende tabell-/panelstruktur med borders, ikke en samling flytende kort. | Gir et mer troverdig enterprise- og kontrollsystemuttrykk. |
+| 2026-08-30 | Alle tall i heroens produktvisning merkes som illustrative demo-data. | Unngår at eksempelverdier oppfattes som dokumenterte resultater. |
