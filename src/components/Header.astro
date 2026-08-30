@@ -1,20 +1,18 @@
 ---
 const nav = [
-  { label: "Produkt", href: "/#plattform" },
-  { label: "Løsninger", href: "/#losninger" },
-  { label: "Resultater", href: "/#resultater" },
-  { label: "Pris", href: "/#pris" },
+  { label: "Produkt", href: "/sitepulse/#plattform" },
+  { label: "Løsninger", href: "/sitepulse/#losninger" },
+  { label: "Resultater", href: "/sitepulse/#resultater" },
+  { label: "Pris", href: "/sitepulse/#pris" },
 ];
 const cloudUrl = "https://sitepulse.zimo.no";
 ---
 
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[#111315]/95 text-white backdrop-blur">
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#111315] text-white">
   <div class="zimo-shell flex h-[4.75rem] items-center justify-between">
-    <a href="/" class="flex items-center gap-3" aria-label="SitePulse hjem">
-      <span class="flex h-8 w-8 items-center justify-center rounded-[9px] bg-[#F4B400] text-[#111315]">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5" aria-hidden="true">
-          <path d="M4 15c2.2 0 2.8-6 5-6s2.8 6 5 6 2.8-6 6-6" />
-        </svg>
+    <a href="/sitepulse/" class="flex items-center gap-3" aria-label="SitePulse hjem">
+      <span class="flex h-8 w-8 items-center justify-center rounded-[8px] bg-[#F4B400] text-[#111315]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5" aria-hidden="true"><path d="M4 15c2.2 0 2.8-6 5-6s2.8 6 5 6 2.8-6 6-6" /></svg>
       </span>
       <span class="leading-none">
         <span class="block text-[1.2rem] font-semibold tracking-[-0.03em]">SitePulse</span>
@@ -28,19 +26,19 @@ const cloudUrl = "https://sitepulse.zimo.no";
 
     <div class="hidden items-center gap-5 md:flex">
       <a href={cloudUrl} target="_blank" rel="noreferrer" class="cursor-pointer text-[13px] font-medium text-white/65 transition-colors duration-200 hover:text-white">Åpne Cloud</a>
-      <a href="/#kontakt" class="inline-flex cursor-pointer items-center justify-center rounded-[9px] bg-[#F4B400] px-4 py-2.5 text-[13px] font-semibold text-[#111315] transition-colors duration-200 hover:bg-[#ffd05a]">Snakk med oss</a>
+      <a href="/sitepulse/#kontakt" class="inline-flex cursor-pointer items-center justify-center rounded-[8px] bg-[#F4B400] px-4 py-2.5 text-[13px] font-semibold text-[#111315] transition-colors duration-200 hover:bg-[#ffd05a]">Snakk med oss</a>
     </div>
 
-    <button class="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-[9px] border border-white/20 text-white transition-colors duration-200 hover:border-white/45 hover:bg-white/10 md:hidden" type="button" aria-label="Åpne meny" aria-expanded="false" data-mobile-toggle>
+    <button class="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-[8px] border border-white/20 text-white transition-colors duration-200 hover:border-white/45 hover:bg-white/10 md:hidden" type="button" aria-label="Åpne meny" aria-expanded="false" data-mobile-toggle>
       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></svg>
     </button>
   </div>
 
   <div class="zimo-shell hidden border-t border-white/10 pb-4 pt-3 md:hidden" data-mobile-menu data-open="false">
-    <nav class="grid rounded-[10px] border border-white/10 bg-[#1B1F23] p-2 text-sm text-white" aria-label="Mobilnavigasjon">
-      {nav.map((item) => <a href={item.href} class="rounded-[8px] px-3 py-3 font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white">{item.label}</a>)}
-      <a href={cloudUrl} target="_blank" rel="noreferrer" class="rounded-[8px] px-3 py-3 font-medium text-[#F4B400] transition-colors duration-200 hover:bg-white/10">Åpne SitePulse Cloud</a>
-      <a href="/#kontakt" class="rounded-[8px] bg-[#F4B400] px-3 py-3 font-semibold text-[#111315]">Snakk med oss</a>
+    <nav class="grid rounded-[8px] border border-white/10 bg-[#1B1F23] p-2 text-sm text-white" aria-label="Mobilnavigasjon">
+      {nav.map((item) => <a href={item.href} class="rounded-[7px] px-3 py-3 font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white">{item.label}</a>)}
+      <a href={cloudUrl} target="_blank" rel="noreferrer" class="rounded-[7px] px-3 py-3 font-medium text-[#F4B400] transition-colors duration-200 hover:bg-white/10">Åpne SitePulse Cloud</a>
+      <a href="/sitepulse/#kontakt" class="rounded-[7px] bg-[#F4B400] px-3 py-3 font-semibold text-[#111315]">Snakk med oss</a>
     </nav>
   </div>
 
