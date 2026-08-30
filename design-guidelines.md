@@ -391,3 +391,27 @@ Design og QA skal vurderes ved minst 375, 768, 1024 og 1440 px.
 | 2026-08-30 | Hovedbudskapet er «Kontroll på byggeplassen. Før kostnaden oppstår.» | Gjør verdien økonomisk og operativ uten generisk SaaS-språk. |
 | 2026-08-30 | Hero-dashboardet viser én temperaturkurve, én terskel, én aktiv regel og et lite utvalg noder. | Konkurrenter innen industriell monitorering lykkes best når de viser hvordan data blir til handling; én tydelig arbeidsflyt er mer troverdig enn mange dekorative widgets. |
 | 2026-08-30 | Byggeplassfoto er ikke lenger selve heltevisualiseringen. | Foto kan brukes som kontekst senere, mens heroen skal prioritere SitePulse som operativt produkt. |
+
+
+## Gjeldende retning – komplett industriprodukt
+
+Denne retningen overstyrer tidligere hero-eksperimenter i dokumentet. De beholdes som beslutningshistorikk, men skal ikke brukes som aktiv implementasjonsregel.
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | Nettsiden bygges som én sammenhengende produktfortelling: verdi → feltutstyr → gateway → cloud → automasjon → dokumentasjon → kostnad → oppstart. | Gjør SitePulse forståelig som et komplett industrisystem, ikke en samling SaaS-komponenter. |
+| 2026-08-30 | Heroen er mørk og fotodrevet, med ekte byggeplass som hovedflate og en enkel operativ statusrad. | Forankrer produktet i bygg/anlegg uten å bruke stockfoto som eneste forklaring eller legge et generisk dashboardkort over bildet. |
+| 2026-08-30 | Produktarkitekturen visualiseres eksplisitt som enheter → Zigbee → SitePulse Gateway → mobilnett/ethernet → SitePulse Cloud. | Viser hvordan det fysiske og digitale systemet henger sammen, med få objekter og tydelig signalflyt. |
+| 2026-08-30 | Store seksjoner forteller én historie hver: system, automasjon, dokumentasjon og kostnad. | Gir premium rytme og unngår card soup. |
+| 2026-08-30 | Demo-UI skal se ut som arbeidsflater og tekniske oversikter, ikke flytende app-mockups. | Understreker at SitePulse er et robust kontrollprodukt for byggebransjen. |
+| 2026-08-30 | SitePulse Yellow brukes til signal, kobling, aktiv regel og primær handling; status har egne semantiske farger. | Bevarer gul som produktidentitet og gjør data lettere å tolke. |
+
+### Aktiv sidestruktur
+
+1. Mørk hero med økonomisk hovedbudskap, byggeplassfoto og live status.
+2. Lys systemseksjon med sensorer, gateway og SitePulse Cloud.
+3. Mørk automasjonsseksjon med temperaturgraf og konkret regel.
+4. Lys dokumentasjonsseksjon med hendelseslogg og rapportgrunnlag.
+5. Kostnadsseksjon med kostnadsdrivere og tydelig merket demoeksempel.
+6. Oppstarts- og prismodell.
+7. Gul, konsentrert kontakt-CTA og mørk footer.
