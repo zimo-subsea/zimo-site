@@ -342,3 +342,13 @@ Design og QA skal vurderes ved minst 375, 768, 1024 og 1440 px.
 - [ ] Ingen emoji-ikoner, hazard-klisjeer eller generisk SaaS-estetikk.
 - [ ] Hover, focus, mobil og reduced-motion er ivaretatt.
 - [ ] Nye visuelle avvik eller bevisste unntak er dokumentert under `Beslutninger`.
+
+
+## Endringer i redesignet
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | Demo-landingssiden redesignes som en produktorientert kontrollflate. | Den tidligere versjonen var for fotodrevet og hadde helgul header; den nye versjonen viser produkt, data og økonomisk verdi tidligere. |
+| 2026-08-30 | Headeren bruker mørk nøytral base med SitePulse først og ZiMO sekundært. | Gjør produktidentiteten tydelig og bevarer gul som et kontrollert SitePulse-signal. |
+| 2026-08-30 | Eksempeldata merkes med \`Demo\` eller \`Demo-data\`. | Tall fra briefen skal ikke fremstå som dokumenterte pilotresultater før reelle data finnes. |
+| 2026-08-30 | Landingssiden bruker større historiefortellende seksjoner: kostnad, flyt, løsninger, automasjon, fysisk/digital kobling, pris og CTA. | Reduserer card soup og gjør produktets verdi lettere å skanne. |
