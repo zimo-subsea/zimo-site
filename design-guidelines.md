@@ -362,3 +362,13 @@ Design og QA skal vurderes ved minst 375, 768, 1024 og 1440 px.
 | 2026-08-30 | Den visuelle retningen er tonet ned fra «AI-generert» til mer konkret industriell/editorial. | Fjernet glow, grid-bakgrunn, overdrevet dashboard-shell og tunge skygger; beholdt mørk base, gul signalfarge og produktdata. |
 | 2026-08-30 | Ekte byggeplassfoto brukes i hero sammen med et nøkternt Cloud-statuspanel. | Forankrer produktet i en faktisk arbeidssituasjon uten å gjøre siden til en ren stockfoto-side. |
 | 2026-08-30 | Demo-tall er eksplisitt merket som demo-data. | Unngår at eksempelverdier blir lest som dokumenterte kunde- eller pilotresultater. |
+
+
+## Nye beslutninger etter visuell feedback
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | ZiMO sin eksisterende wordmark skal brukes i header og footer; SitePulse vises som produktlabel. | Beholder selskapets etablerte merkevare og unngår en ny, kunstig produktlogo. |
+| 2026-08-30 | Grafer er primær forklaring av status, kostnad og automasjon. | Produktet handler om målinger over tid; grafer gir mer troverdig forklaring enn dekorative dashboard-kort. |
+| 2026-08-30 | Status og regler skal bruke høy-kontrast tekst, små markører og borders, ikke pastellfargede pills eller store fargeflater. | Pastellflater og avrundede chips ga et generisk, AI-generert SaaS-uttrykk. |
+| 2026-08-30 | Unngå glow, blur, overdreven dekorativ grid og flytende mockup-lag. | Et flatere og mer redaksjonelt uttrykk føles mer industrielt, konkret og menneskelig. |
