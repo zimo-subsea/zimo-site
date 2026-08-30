@@ -6,7 +6,6 @@ import Footer from "../../components/Footer.astro";
 const fieldNodes = [
   { name: "Temperatur", value: "18,2 °C", meta: "Sone nord", icon: "temperature" },
   { name: "Luftfuktighet", value: "41 %", meta: "Sone øst", icon: "humidity" },
-  { name: "Vann", value: "Tørt", meta: "Teknisk rom", icon: "water" },
 ];
 
 const flowSteps = [
@@ -33,148 +32,105 @@ const costDrivers = [
   <Header />
 
   <main id="main-content">
-    <section class="bg-[#111315] text-white">
-      <div class="grid min-h-[calc(100svh-4.75rem)] lg:grid-cols-[0.92fr_1.08fr]">
-        <div class="flex items-center px-5 py-20 sm:px-8 lg:justify-end lg:px-14 lg:py-24 xl:px-20">
-          <div class="w-full max-w-[560px]">
-            <div class="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/46">
-              <span class="h-px w-8 bg-[#F4B400]"></span>
-              <span>SitePulse · industriell kontroll</span>
-            </div>
-            <h1 class="mt-7 text-[3.25rem] font-semibold leading-[0.96] tracking-[-0.055em] sm:text-6xl xl:text-[4.8rem]">Lavere kostnader på byggeplassen.</h1>
-            <p class="mt-7 max-w-xl text-lg leading-relaxed text-white/64 sm:text-xl">SitePulse overvåker forholdene, dokumenterer automatisk og styrer utstyr etter faktisk behov.</p>
-            <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#plattform" class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-[8px] bg-[#F4B400] px-6 py-3.5 text-sm font-semibold text-[#111315] transition-colors duration-200 hover:bg-[#FFD05A]">Se hvordan systemet virker</a>
-              <a href="#kontakt" class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-[8px] border border-white/24 px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:border-white/55 hover:bg-white/8">Snakk med oss</a>
-            </div>
-            <div class="mt-12 grid grid-cols-3 border-y border-white/12 py-5 text-sm">
-              <div><p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/35">Måler</p><p class="mt-2 text-white/78">Klima og status</p></div>
-              <div class="border-l border-white/12 pl-5"><p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/35">Dokumenterer</p><p class="mt-2 text-white/78">Hele døgnet</p></div>
-              <div class="border-l border-white/12 pl-5"><p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/35">Styrer</p><p class="mt-2 text-white/78">Etter behov</p></div>
-            </div>
+    <section class="relative overflow-hidden bg-[#111315] text-white">
+      <div class="zimo-shell flex min-h-[680px] items-center justify-center py-24 text-center lg:min-h-[720px] lg:py-28">
+        <div class="relative z-10 max-w-5xl">
+          <div class="flex items-center justify-center gap-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/46">
+            <span class="h-px w-8 bg-[#F4B400]"></span>
+            <span>SitePulse · kontrollsystem for byggeplassen</span>
+            <span class="h-px w-8 bg-[#F4B400]"></span>
+          </div>
+          <h1 class="mx-auto mt-8 max-w-5xl text-[3.4rem] font-semibold leading-[0.96] tracking-[-0.06em] sm:text-7xl lg:text-[5.5rem]">Byggeplassen,<br />under kontroll.</h1>
+          <p class="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/62 sm:text-xl">SitePulse samler målinger, dokumentasjon og styring i én løsning. Dere ser hva som skjer — og kan reagere når det trengs.</p>
+          <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <a href="#plattform" class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-[8px] bg-[#F4B400] px-6 py-3.5 text-sm font-semibold text-[#111315] transition-colors duration-200 hover:bg-[#FFD05A]">Se hvordan SitePulse virker</a>
+            <a href="#kontakt" class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-[8px] border border-white/24 px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:border-white/55 hover:bg-white/8">Snakk med oss</a>
           </div>
         </div>
-
-        <figure class="relative min-h-[520px] overflow-hidden border-l border-white/10 lg:min-h-[760px]">
-          <img src="/images/sitepulse-construction-manager.png" alt="Byggeleder som følger byggeplassdata på mobil ved en montert SitePulse-enhet" class="absolute inset-0 h-full w-full object-cover object-[66%_center]" loading="eager" decoding="async" />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#111315] via-transparent to-[#111315]/12"></div>
-          <div class="absolute left-5 top-5 flex items-center gap-3 border border-white/20 bg-[#111315]/82 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.13em] text-white/72 backdrop-blur-[2px] sm:left-7 sm:top-7">
-            <span class="h-2 w-2 bg-[#8BAA4A]"></span>
-            <span>System online · demo</span>
-          </div>
-          <figcaption class="absolute inset-x-0 bottom-0 grid border-t border-white/16 bg-[#111315]/94 sm:grid-cols-3">
-            <div class="border-b border-white/12 px-5 py-5 sm:border-b-0 sm:border-r sm:px-7">
-              <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/38">Sone nord</p>
-              <p class="mt-2 text-xl font-semibold">18,2 °C</p>
-              <p class="mt-1 text-xs text-white/45">Temperatur</p>
-            </div>
-            <div class="border-b border-white/12 px-5 py-5 sm:border-b-0 sm:border-r sm:px-7">
-              <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/38">Gateway</p>
-              <p class="mt-2 flex items-center gap-2 text-sm font-semibold"><span class="h-1.5 w-1.5 bg-[#8BAA4A]"></span>Online</p>
-              <p class="mt-1 text-xs text-white/45">Sist sett nå</p>
-            </div>
-            <div class="px-5 py-5 sm:px-7">
-              <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/38">Aktiv regel</p>
-              <p class="mt-2 text-sm font-semibold text-[#F4B400]">Byggvarme</p>
-              <p class="mt-1 text-xs text-white/45">Automatisk styring</p>
-            </div>
-          </figcaption>
-        </figure>
+      </div>
+      <div class="border-t border-white/12">
+        <div class="zimo-shell grid grid-cols-2 lg:grid-cols-4">
+          <div class="border-b border-r border-white/10 py-5 pr-4 lg:border-b-0"><p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/34">Målinger</p><p class="mt-2 text-sm font-medium text-white/76">Kontinuerlig</p></div>
+          <div class="border-b border-white/10 py-5 pl-4 lg:border-b-0 lg:border-r lg:pr-4"><p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/34">Dokumentasjon</p><p class="mt-2 text-sm font-medium text-white/76">Automatisk</p></div>
+          <div class="border-r border-white/10 py-5 pr-4 lg:pl-4"><p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/34">Styring</p><p class="mt-2 text-sm font-medium text-white/76">Etter behov</p></div>
+          <div class="py-5 pl-4"><p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/34">Forbindelse</p><p class="mt-2 flex items-center gap-2 text-sm font-medium text-white/76"><span class="h-1.5 w-1.5 bg-[#8BAA4A]"></span>LTE</p></div>
+        </div>
       </div>
     </section>
 
     <section id="plattform" class="scroll-mt-20 border-b border-[#D4D8D5] bg-[#F5F5F2] py-20 lg:py-28">
       <div class="zimo-shell">
-        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
-            <p class="zimo-eyebrow">Ett sammenhengende system</p>
-            <h2 class="mt-5 max-w-2xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Fra byggeplassen til skyen.</h2>
+            <p class="zimo-eyebrow">Slik fungerer SitePulse</p>
+            <h2 class="mt-5 max-w-xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Fra felt til Cloud.</h2>
           </div>
-          <p class="max-w-2xl text-lg leading-relaxed text-[#566267] lg:justify-self-end">Sensorene snakker med gatewayen. Gatewayen holder kontakt med SitePulse Cloud. Der blir målingene til varsler, dokumentasjon og handling.</p>
+          <p class="max-w-2xl text-lg leading-relaxed text-[#566267] lg:justify-self-end">Enhetene sender målinger til SitePulse Gateway. Gatewayen bruker LTE for å holde SitePulse Cloud oppdatert — uten at prosjektteamet må følge opp forbindelsen.</p>
         </div>
 
-        <div class="mt-16 border-y border-[#C9CFCC] py-10 lg:py-14">
-          <div class="grid items-center gap-8 lg:grid-cols-[1fr_6rem_0.72fr_6rem_1.2fr] lg:gap-4">
-            <div>
-              <div class="flex items-center justify-between border-b border-[#C9CFCC] pb-3">
-                <p class="text-[10px] font-semibold uppercase tracking-[0.13em] text-[#68767A]">Enheter i felt</p>
-                <p class="text-[10px] uppercase tracking-[0.12em] text-[#8B6500]">3 online</p>
+        <div class="mt-16 border-y border-[#C9CFCC] py-12 lg:py-16">
+          <div class="grid items-center gap-8 lg:grid-cols-[0.9fr_5rem_0.7fr_7rem_1.15fr] lg:gap-6">
+            <div class="border border-[#C9CFCC] bg-white">
+              <div class="border-b border-[#D9DDDA] px-5 py-4">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.13em] text-[#68767A]">Måleenheter</p>
               </div>
               <div class="divide-y divide-[#D9DDDA]">
-                {fieldNodes.map((node) => (
-                  <div class="grid grid-cols-[2.7rem_1fr_auto] items-center gap-3 py-4">
-                    <div class="flex h-10 w-10 items-center justify-center border border-[#BFC6C3] bg-white">
-                      {node.icon === "temperature" && <svg class="h-5 w-5 text-[#111315]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 14.76V5a4 4 0 0 0-8 0v9.76a6 6 0 1 0 8 0Z" /><path d="M10 6v10" /></svg>}
-                      {node.icon === "humidity" && <svg class="h-5 w-5 text-[#111315]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3S6 9.2 6 14a6 6 0 0 0 12 0c0-4.8-6-11-6-11Z" /><path d="M9 15.5a3.2 3.2 0 0 0 3 1.8" /></svg>}
-                      {node.icon === "water" && <svg class="h-5 w-5 text-[#111315]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 16c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1" /><path d="M5 11c1.4 0 1.6-.8 3-.8s1.6.8 3 .8 1.6-.8 3-.8 1.6.8 3 .8" /></svg>}
-                    </div>
-                    <div><p class="text-sm font-semibold">{node.name}</p><p class="mt-1 text-xs text-[#768287]">{node.meta}</p></div>
-                    <div class="text-right"><p class="text-sm font-semibold">{node.value}</p><p class="mt-1 flex items-center justify-end gap-1.5 text-[10px] uppercase tracking-[0.1em] text-[#5F843A]"><span class="h-1.5 w-1.5 bg-[#8BAA4A]"></span>Live</p></div>
+                <div class="flex items-center gap-4 px-5 py-5">
+                  <div class="flex h-11 w-11 items-center justify-center border border-[#BFC6C3]">
+                    <svg class="h-5 w-5 text-[#111315]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 14.76V5a4 4 0 0 0-8 0v9.76a6 6 0 1 0 8 0Z" /><path d="M10 6v10" /></svg>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center gap-3 py-1">
-              <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#68767A] lg:order-1">Zigbee</p>
-              <div class="relative h-12 w-px bg-[#F4B400] lg:order-2 lg:h-px lg:w-full"><span class="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 bg-[#F4B400]"></span></div>
-            </div>
-
-            <div class="mx-auto w-full max-w-[230px]">
-              <p class="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.13em] text-[#68767A]">SitePulse Gateway</p>
-              <div class="border border-[#30373A] bg-[#171A1C] p-4">
-                <div class="relative aspect-[0.82] border border-[#B9BFBC] bg-[#E9EAE7]">
-                  <div class="absolute inset-x-0 top-0 flex items-center justify-between border-b border-[#C5CAC7] px-3 py-3">
-                    <span class="text-[9px] font-bold uppercase tracking-[0.16em] text-[#30373A]">SitePulse</span>
-                    <span class="h-2 w-2 bg-[#8BAA4A]"></span>
+                  <div><p class="text-sm font-semibold">Temperatur</p><p class="mt-1 text-xs text-[#768287]">Måles kontinuerlig</p></div>
+                </div>
+                <div class="flex items-center gap-4 px-5 py-5">
+                  <div class="flex h-11 w-11 items-center justify-center border border-[#BFC6C3]">
+                    <svg class="h-5 w-5 text-[#111315]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3S6 9.2 6 14a6 6 0 0 0 12 0c0-4.8-6-11-6-11Z" /><path d="M9 15.5a3.2 3.2 0 0 0 3 1.8" /></svg>
                   </div>
-                  <div class="absolute inset-x-5 top-1/2 -translate-y-1/2">
-                    <div class="flex items-end justify-between">
-                      <div><p class="text-[9px] uppercase tracking-[0.12em] text-[#68767A]">Status</p><p class="mt-1 text-sm font-semibold text-[#111315]">Online</p></div>
-                      <svg class="h-8 w-12 text-[#F4B400]" viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 27h4M12 22h4v5h-4zM20 16h4v11h-4zM28 10h4v17h-4zM36 4h4v23h-4z" /></svg>
-                    </div>
-                  </div>
-                  <div class="absolute inset-x-0 bottom-0 border-t border-[#C5CAC7] px-3 py-3 text-[9px] uppercase tracking-[0.12em] text-[#68767A]">LTE-M · Ethernet</div>
+                  <div><p class="text-sm font-semibold">Luftfuktighet</p><p class="mt-1 text-xs text-[#768287]">Historikk og varsling</p></div>
                 </div>
               </div>
             </div>
 
-            <div class="flex flex-col items-center gap-3 py-1">
-              <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#68767A] lg:order-1">Mobilnett / nett</p>
-              <div class="relative h-12 w-px bg-[#F4B400] lg:order-2 lg:h-px lg:w-full"><span class="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 bg-[#F4B400]"></span></div>
+            <div class="flex items-center justify-center">
+              <div class="h-12 w-px bg-[#C9CFCC] lg:h-px lg:w-full"></div>
+            </div>
+
+            <div class="mx-auto w-full max-w-[220px]">
+              <p class="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.13em] text-[#68767A]">SitePulse Gateway</p>
+              <div class="border border-[#30373A] bg-[#171A1C] p-4">
+                <div class="relative aspect-[0.9] border border-[#B9BFBC] bg-[#E9EAE7]">
+                  <div class="absolute inset-x-0 top-0 flex items-center justify-between border-b border-[#C5CAC7] px-3 py-3"><span class="text-[9px] font-bold uppercase tracking-[0.16em] text-[#30373A]">SitePulse</span><span class="h-2 w-2 bg-[#8BAA4A]"></span></div>
+                  <div class="absolute inset-x-5 top-1/2 -translate-y-1/2"><p class="text-[9px] uppercase tracking-[0.12em] text-[#68767A]">Status</p><p class="mt-1 text-sm font-semibold text-[#111315]">Online</p></div>
+                  <div class="absolute inset-x-0 bottom-0 border-t border-[#C5CAC7] px-3 py-3 text-[9px] uppercase tracking-[0.12em] text-[#68767A]">Gateway</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+              <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8B6500]">LTE</p>
+              <div class="relative h-12 w-px bg-[#F4B400] lg:h-px lg:w-full"><span class="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 bg-[#F4B400]"></span></div>
             </div>
 
             <div class="border border-[#30373A] bg-[#1B1F23] text-white">
               <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
                 <div><p class="text-xs font-semibold">SitePulse Cloud</p><p class="mt-1 text-[10px] uppercase tracking-[0.11em] text-white/38">Prosjektoversikt</p></div>
-                <div class="flex items-center gap-2 text-[10px] uppercase tracking-[0.1em] text-white/50"><span class="h-1.5 w-1.5 bg-[#8BAA4A]"></span>Synkronisert</div>
+                <div class="flex items-center gap-2 text-[10px] uppercase tracking-[0.1em] text-white/50"><span class="h-1.5 w-1.5 bg-[#8BAA4A]"></span>Online</div>
               </div>
-              <div class="grid sm:grid-cols-[1.25fr_0.75fr]">
-                <div class="border-b border-white/10 p-5 sm:border-b-0 sm:border-r">
-                  <div class="flex items-end justify-between gap-4"><div><p class="text-[10px] uppercase tracking-[0.11em] text-white/38">Temperatur</p><p class="mt-2 text-2xl font-semibold">18,2 °C</p></div><p class="text-xs text-[#8BAA4A]">Normal drift</p></div>
-                  <svg class="mt-5 h-28 w-full" viewBox="0 0 420 130" preserveAspectRatio="none" role="img" aria-label="Temperaturtrend i SitePulse Cloud">
-                    <path d="M0 100H420M0 60H420M0 20H420" stroke="#343B3F" stroke-width="1" />
-                    <path d="M0 91C32 86 45 65 78 75S126 106 159 80S208 42 240 57S282 98 315 72S362 40 420 31" fill="none" stroke="#F4B400" stroke-width="3" vector-effect="non-scaling-stroke" />
-                  </svg>
-                </div>
-                <div class="p-5">
-                  <p class="text-[10px] uppercase tracking-[0.11em] text-white/38">Automatisering</p>
-                  <p class="mt-3 text-sm font-semibold text-[#F4B400]">Byggvarme aktiv</p>
-                  <p class="mt-2 text-xs leading-relaxed text-white/48">Styres etter målt temperatur.</p>
-                  <div class="mt-5 border-t border-white/10 pt-4"><p class="text-[10px] uppercase tracking-[0.11em] text-white/38">Historikk</p><p class="mt-2 text-xs font-semibold">Løpende logg</p></div>
-                </div>
+              <div class="p-5">
+                <div class="flex items-end justify-between gap-4"><div><p class="text-[10px] uppercase tracking-[0.11em] text-white/38">Temperatur</p><p class="mt-2 text-2xl font-semibold">18,2 °C</p></div><p class="text-xs text-[#8BAA4A]">Normal drift</p></div>
+                <svg class="mt-5 h-28 w-full" viewBox="0 0 420 130" preserveAspectRatio="none" role="img" aria-label="Temperaturtrend i SitePulse Cloud">
+                  <path d="M0 100H420M0 60H420M0 20H420" stroke="#343B3F" stroke-width="1" />
+                  <path d="M0 91C32 86 45 65 78 75S126 106 159 80S208 42 240 57S282 98 315 72S362 40 420 31" fill="none" stroke="#F4B400" stroke-width="3" vector-effect="non-scaling-stroke" />
+                </svg>
+                <div class="mt-5 grid grid-cols-2 border-t border-white/10 pt-4 text-xs"><div><p class="text-white/35">Dokumentasjon</p><p class="mt-2 font-semibold">Automatisk</p></div><div class="border-l border-white/10 pl-4"><p class="text-white/35">Styring</p><p class="mt-2 font-semibold text-[#F4B400]">Etter regler</p></div></div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="grid gap-8 pt-9 md:grid-cols-3">
-          {flowSteps.map((step) => (
-            <div class="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-[#C9CFCC] pt-5">
-              <span class="text-sm font-semibold text-[#8B6500]">{step.number}</span>
-              <div><h3 class="text-lg font-semibold">{step.title}</h3><p class="mt-3 text-sm leading-relaxed text-[#68767A]">{step.text}</p></div>
-            </div>
-          ))}
+          <div class="border-t border-[#C9CFCC] pt-5"><span class="text-sm font-semibold text-[#8B6500]">01</span><h3 class="mt-4 text-lg font-semibold">Mål</h3><p class="mt-3 text-sm leading-relaxed text-[#68767A]">Temperatur og luftfuktighet følges der arbeidet skjer.</p></div>
+          <div class="border-t border-[#C9CFCC] pt-5"><span class="text-sm font-semibold text-[#8B6500]">02</span><h3 class="mt-4 text-lg font-semibold">Send med LTE</h3><p class="mt-3 text-sm leading-relaxed text-[#68767A]">Gatewayen holder prosjektet koblet til SitePulse Cloud.</p></div>
+          <div class="border-t border-[#C9CFCC] pt-5"><span class="text-sm font-semibold text-[#8B6500]">03</span><h3 class="mt-4 text-lg font-semibold">Følg og styr</h3><p class="mt-3 text-sm leading-relaxed text-[#68767A]">Prosjektteamet får historikk, varsler og automatiske regler.</p></div>
         </div>
       </div>
     </section>
@@ -300,6 +256,28 @@ const costDrivers = [
       </div>
     </section>
 
+    <section id="felt" class="border-y border-[#D4D8D5] bg-white">
+      <div class="grid lg:grid-cols-[1.08fr_0.92fr]">
+        <figure class="relative min-h-[460px] overflow-hidden lg:min-h-[620px]">
+          <img src="/images/sitepulse-construction-manager.png" alt="SitePulse-enhet montert på byggeplass mens prosjektdata følges på mobil" class="absolute inset-0 h-full w-full object-cover object-[66%_center]" loading="lazy" decoding="async" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#111315]/45 via-transparent to-transparent"></div>
+          <figcaption class="absolute bottom-0 left-0 border-t border-r border-white/20 bg-[#111315]/90 px-5 py-4 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/68">Bygget for feltet</figcaption>
+        </figure>
+        <div class="flex items-center px-5 py-16 sm:px-8 lg:px-14 lg:py-20 xl:px-20">
+          <div class="max-w-xl">
+            <p class="zimo-eyebrow">Fra prosjekt til prosjekt</p>
+            <h2 class="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl">Kjøpes én gang. Brukes igjen.</h2>
+            <p class="mt-6 text-lg leading-relaxed text-[#566267]">Enhetene eies permanent av kunden. ZiMO kan ta dem inn på lager mellom prosjektene, slik at de er klare til gjenbruk uten ny enhetskostnad.</p>
+            <div class="mt-9 divide-y divide-[#D9DDDA] border-y border-[#D9DDDA]">
+              <div class="grid grid-cols-[1fr_auto] gap-5 py-4"><p class="text-sm text-[#68767A]">Eierskap</p><p class="text-sm font-semibold">Permanent</p></div>
+              <div class="grid grid-cols-[1fr_auto] gap-5 py-4"><p class="text-sm text-[#68767A]">Mellom prosjekter</p><p class="text-sm font-semibold">Lagring hos ZiMO</p></div>
+              <div class="grid grid-cols-[1fr_auto] gap-5 py-4"><p class="text-sm text-[#68767A]">Neste prosjekt</p><p class="text-sm font-semibold text-[#4F722F]">Ingen ny enhetskostnad</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="pris" class="scroll-mt-20 border-y border-white/10 bg-[#1B1F23] py-20 text-white lg:py-24">
       <div class="zimo-shell">
         <div class="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
@@ -310,7 +288,7 @@ const costDrivers = [
           </div>
           <div class="grid border-y border-white/15 sm:grid-cols-3">
             <div class="border-b border-white/12 py-6 sm:border-b-0 sm:border-r sm:px-6 sm:first:pl-0"><p class="text-[10px] uppercase tracking-[0.12em] text-white/38">Gateway</p><p class="mt-4 text-xl font-semibold">Fra 399 kr/mnd</p><p class="mt-3 text-sm leading-relaxed text-white/48">Én tilkobling for byggeplassen.</p></div>
-            <div class="border-b border-white/12 py-6 sm:border-b-0 sm:border-r sm:px-6"><p class="text-[10px] uppercase tracking-[0.12em] text-white/38">Enheter</p><p class="mt-4 text-xl font-semibold">Eies av dere</p><p class="mt-3 text-sm leading-relaxed text-white/48">Kjøp sensorene prosjektet trenger.</p></div>
+            <div class="border-b border-white/12 py-6 sm:border-b-0 sm:border-r sm:px-6"><p class="text-[10px] uppercase tracking-[0.12em] text-white/38">Enheter</p><p class="mt-4 text-xl font-semibold">Permanent eierskap</p><p class="mt-3 text-sm leading-relaxed text-white/48">Enhetene kjøpes én gang og følger dere videre.</p></div>
             <div class="py-6 sm:pl-6"><p class="text-[10px] uppercase tracking-[0.12em] text-white/38">Pilot</p><p class="mt-4 text-xl font-semibold">Tilpasses behovet</p><p class="mt-3 text-sm leading-relaxed text-white/48">Avgrenset oppstart med tydelig mål.</p></div>
           </div>
         </div>
