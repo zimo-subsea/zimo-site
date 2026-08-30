@@ -415,3 +415,17 @@ Denne retningen overstyrer tidligere hero-eksperimenter i dokumentet. De beholde
 5. Kostnadsseksjon med kostnadsdrivere og tydelig merket demoeksempel.
 6. Oppstarts- og prismodell.
 7. Gul, konsentrert kontakt-CTA og mørk footer.
+
+
+## Produkt- og heroavklaring
+
+Denne avklaringen overstyrer tidligere regler om fotodrevet hero og detaljert gatewaydiagram.
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | Gjeldende hovedbudskap er «Byggeplassen, under kontroll.» | Mer fengende enn et generelt kostnadsløfte og tydelig nok uten å love en bestemt besparelse. |
+| 2026-08-30 | Heroen er typografisk og uten foto, dashboardmockup eller gatewayillustrasjon. | Gir et roligere, mer selvsikkert og mindre konstruert førsteinntrykk. |
+| 2026-08-30 | Byggeplassfoto brukes som feltkontekst lenger ned på siden. | Bildet støtter produktets fysiske bruk uten å definere hele merkevareinntrykket. |
+| 2026-08-30 | Systemforklaringen holdes enkel: måleenheter → gateway → LTE → SitePulse Cloud. | LTE er relevant; detaljer om lokal kommunikasjon er sekundære på salgssiden. |
+| 2026-08-30 | Vannmåling skal ikke vises som tilgjengelig funksjon. | Produktet støtter foreløpig temperatur og luftfuktighet, ikke vann. |
+| 2026-08-30 | Enhetene beskrives som permanent eid, med lagring hos ZiMO mellom prosjekter og gjenbruk uten ny enhetskostnad. | Forklarer den faktiske kommersielle modellen mer presist. |
