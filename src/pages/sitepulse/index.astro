@@ -3,17 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-const fieldNodes = [
-  { name: "Temperatur", value: "18,2 °C", meta: "Sone nord", icon: "temperature" },
-  { name: "Luftfuktighet", value: "41 %", meta: "Sone øst", icon: "humidity" },
-];
-
-const flowSteps = [
-  { number: "01", title: "Mål i felt", text: "Sensorene følger temperatur, fukt og andre kritiske forhold der arbeidet skjer." },
-  { number: "02", title: "Koble lokalt", text: "Enhetene sender data via Zigbee til SitePulse Gateway på byggeplassen." },
-  { number: "03", title: "Handle i skyen", text: "Gatewayen sender data til Cloud, der regler varsler, dokumenterer eller styrer utstyr." },
-];
-
 const logEntries = [
   { time: "07:20", title: "Byggvarme startet", detail: "Temperatur under 5 °C · sone nord", tone: "yellow" },
   { time: "08:45", title: "Temperatur tilbake i normalområde", detail: "Målt 10,4 °C · automatisk logget", tone: "green" },
