@@ -352,3 +352,13 @@ Design og QA skal vurderes ved minst 375, 768, 1024 og 1440 px.
 | 2026-08-30 | Headeren bruker mørk nøytral base med SitePulse først og ZiMO sekundært. | Gjør produktidentiteten tydelig og bevarer gul som et kontrollert SitePulse-signal. |
 | 2026-08-30 | Eksempeldata merkes med \`Demo\` eller \`Demo-data\`. | Tall fra briefen skal ikke fremstå som dokumenterte pilotresultater før reelle data finnes. |
 | 2026-08-30 | Landingssiden bruker større historiefortellende seksjoner: kostnad, flyt, løsninger, automasjon, fysisk/digital kobling, pris og CTA. | Reduserer card soup og gjør produktets verdi lettere å skanne. |
+
+
+## Routing og uttrykksjustering
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | SitePulse-nettsiden ligger på \`/sitepulse/\`; \`/\` redirecter automatisk dit. | ZiMO skal kunne få egne sider uten at SitePulse opptar rotdomenet. |
+| 2026-08-30 | Den visuelle retningen er tonet ned fra «AI-generert» til mer konkret industriell/editorial. | Fjernet glow, grid-bakgrunn, overdrevet dashboard-shell og tunge skygger; beholdt mørk base, gul signalfarge og produktdata. |
+| 2026-08-30 | Ekte byggeplassfoto brukes i hero sammen med et nøkternt Cloud-statuspanel. | Forankrer produktet i en faktisk arbeidssituasjon uten å gjøre siden til en ren stockfoto-side. |
+| 2026-08-30 | Demo-tall er eksplisitt merket som demo-data. | Unngår at eksempelverdier blir lest som dokumenterte kunde- eller pilotresultater. |
