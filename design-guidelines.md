@@ -381,3 +381,13 @@ Design og QA skal vurderes ved minst 375, 768, 1024 og 1440 px.
 | 2026-08-30 | Navigasjonsheaderen med ZiMO-logo og SitePulse-label beholdes uendret. | Tilbakemeldingen gjaldt hero-/produktblokken under headeren, ikke navigasjonen. |
 | 2026-08-30 | Heroen skal kombinere ekte byggeplassfoto med en mørk produktflate og en tydelig temperaturgraf. | Fotoet gir kontekst, mens grafen forklarer måling, terskel og automatisk handling mer konkret enn dekorative UI-elementer. |
 | 2026-08-30 | Pastellfargede statuschips og myke dashboardkort skal ikke brukes i heroen. | Heroen skal føles som et nøkternt industrielt kontrollsystem, ikke en generisk AI-generert SaaS-demo. |
+
+
+## Ny hero-retning etter visuell gjennomgang
+
+| Dato | Beslutning | Begrunnelse |
+| --- | --- | --- |
+| 2026-08-30 | Heroen bruker en lys, redaksjonell arbeidsflate med én mørk, rektangulær SitePulse Cloud-visning som hovedbevis. | Gir mer kontrast og profesjonalitet enn en mørk flate med foto-over-panel, samtidig som produktet vises konkret tidlig. |
+| 2026-08-30 | Hovedbudskapet er «Kontroll på byggeplassen. Før kostnaden oppstår.» | Gjør verdien økonomisk og operativ uten generisk SaaS-språk. |
+| 2026-08-30 | Hero-dashboardet viser én temperaturkurve, én terskel, én aktiv regel og et lite utvalg noder. | Konkurrenter innen industriell monitorering lykkes best når de viser hvordan data blir til handling; én tydelig arbeidsflyt er mer troverdig enn mange dekorative widgets. |
+| 2026-08-30 | Byggeplassfoto er ikke lenger selve heltevisualiseringen. | Foto kan brukes som kontekst senere, mens heroen skal prioritere SitePulse som operativt produkt. |
